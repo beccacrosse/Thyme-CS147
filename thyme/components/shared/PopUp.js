@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Modal, StyleSheet, Pressable, Text, View } from "react-native";
+import MainButton from "./MainButton";
 
-export const PopUp = (props) => {
-  const [modalVisible, setModalVisible] = useState(true);
+// A modal that displays a customizable popup with a title, message, and optional buttons.
+const PopUp = (props) => {
+  const [modalVisible, setModalVisible] = useState(false);
 
   // Obtain title, message, and button text from props
-  const title = props.title;
-  const message = props.message;
-  const primaryButtonText = props.primaryButtonText;
-  const secondaryButtonText = props.secondaryButtonText;
-  const visibility = props.visibility;
+  const title = props.title; // Title of PopUp
+  const message = props.message; // Body text of PopUp
+  const primaryButtonText = props.primaryButtonText; // Text on Primary Button
+  const secondaryButtonText = props.secondaryButtonText; // Text on Secondary Button
+  const visibility = props.visibility; // Whether or not the PopUp is visible
 
-  // TO DO: Fix the Visibility
+  // Set the visibility of PopUp based on props' visibility value
   useEffect(() => {
-    if (visibility) {
+    if (visibility != null) {
       setModalVisible(visibility);
     }
   }, [visibility]);
@@ -23,30 +25,24 @@ export const PopUp = (props) => {
     // If secondaryButtonText is specified, include 2 buttons
     buttonDisplayed = (
       <View style={styles.buttonContainer}>
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => setModalVisible(!modalVisible)}
-        >
-          <Text style={styles.textStyle}>{secondaryButtonText}</Text>
-        </Pressable>
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => setModalVisible(!modalVisible)}
-        >
-          <Text style={styles.textStyle}>{primaryButtonText}</Text>
-        </Pressable>
+        <MainButton
+          buttonText={secondaryButtonText}
+          buttonAction={() => setModalVisible(!modalVisible)}
+        />
+        <MainButton
+          buttonText={primaryButtonText}
+          buttonAction={() => setModalVisible(!modalVisible)}
+        />
       </View>
     );
   } else if (primaryButtonText) {
     // If only primaryButtonText is specified, include 1 button
     buttonDisplayed = (
       <View style={styles.buttonContainer}>
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => setModalVisible(!modalVisible)}
-        >
-          <Text style={styles.textStyle}>{primaryButtonText}</Text>
-        </Pressable>
+        <MainButton
+          buttonText={primaryButtonText}
+          buttonAction={() => setModalVisible(!modalVisible)}
+        />
       </View>
     );
   } else {
@@ -88,7 +84,7 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "#E5ECDA",
     borderColor: "#898686",
-    borderWidth: 1,
+    //borderWidth: 1,
     borderRadius: 20,
     padding: 25,
     alignItems: "center",
@@ -103,8 +99,8 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 40,
-    borderColor: "#898686",
-    borderWidth: 1,
+    //borderColor: "#898686",
+    //borderWidth: 1,
     padding: 20,
     elevation: 2,
     marginTop: 5,
@@ -117,10 +113,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   buttonOpen: {
-    backgroundColor: "#263E20",
+    backgroundColor: "#8FD48D",
   },
   buttonClose: {
-    backgroundColor: "#C2D8A4",
+    backgroundColor: "#8FD48D",
   },
   textStyle: {
     color: "black",
