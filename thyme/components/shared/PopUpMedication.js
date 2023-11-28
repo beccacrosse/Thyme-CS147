@@ -15,7 +15,7 @@ import { Icons } from "../../assets/themes";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
-// A modal that displays a customizable popup with a title, message, and optional buttons.
+// A modal that displays a customizable popup with a title, icon, message, text input, and optional buttons.
 const PopUpMedication = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [text, setText] = useState("");
@@ -92,6 +92,7 @@ const PopUpMedication = (props) => {
             <View style={{ alignSelf: "flex-start" }}>
               {backButtonDisplayed}
             </View>
+            {/* TO DO: Make Icons an Input Value */}
             <Image source={Icons.ativan} style={styles.icon} />
             <Text style={styles.modalTitleText}>{title}</Text>
             <Text style={styles.modalBodyText}>{message}</Text>
