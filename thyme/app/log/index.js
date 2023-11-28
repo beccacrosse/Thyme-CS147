@@ -1,28 +1,28 @@
 import React from 'react'
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import {Styles} from '../../assets/themes'
+import {Styles} from '../../assets/themes';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
 export default function Log() {
   return (
-    <View style={styles.container}>
-    <Text>Welcome to your log medications page!</Text>
-    <StatusBar style="auto" />
-    </View>
+    <LinearGradient
+        // Background Linear Gradient
+        style={Styles.container}
+        colors={['#C2D8A4', 'rgba(194, 216, 164, 0.00)']}
+        start={{x:0.6, y:0.4}}
+        
+      >
+
+      <Text>Log!!</Text>
+      <StatusBar style="auto" />
+      </LinearGradient>   
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  
-});
+
 
 // export const log = () => {
 //   return (

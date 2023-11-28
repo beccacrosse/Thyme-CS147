@@ -1,22 +1,22 @@
 import React from 'react'
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-
+import { LinearGradient } from 'expo-linear-gradient';
+import {Styles} from '../../assets/themes'
 
 export default function Connections() {
   return (
-    <View style={styles.container}>
-    <Text>Welcome to your connections page!</Text>
-    <StatusBar style="auto" />
-    </View>
+    <LinearGradient
+        // Background Linear Gradient
+        style={Styles.container}
+        colors={['#C2D8A4', 'rgba(194, 216, 164, 0.00)']}
+        start={{x:0.6, y:0.4}}
+        
+      >
+
+      <Text>Connections!!</Text>
+      <StatusBar style="auto" />
+      </LinearGradient>   
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
