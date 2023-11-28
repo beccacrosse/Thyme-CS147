@@ -1,8 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar"
 import { LinearGradient } from 'expo-linear-gradient';
 import {Styles} from '../../assets/themes'
+
 
 
 export default function Settings() {
