@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 
+// Main Button 
 const MainButton = (props) => {
   const title = props.buttonText; // Text on button
   const action = props.buttonAction; // Action that occurs when button is clicked
