@@ -24,6 +24,7 @@ export default function Log() {
 
 
 
+
 // export const log = () => {
 //   return (
 //     <div>log</div>
