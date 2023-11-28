@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,Image } from "react-native";
 import { Link } from "expo-router";
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Styles} from '../assets/themes'
+import forestImage from "../assets/icons/forest.png"
 
 export default function App() {
   return (
@@ -16,8 +17,14 @@ export default function App() {
         
       >
 
-      <Text>Open up App.js to start working on your app!!</Text>
-      <StatusBar style="auto" />
+
+         <Image
+          style = {{ width: 500,
+          height: 500,resizeMode: 'stretch'}}
+          source={forestImage}
+          />
+
+     
       </LinearGradient>   
 
   );

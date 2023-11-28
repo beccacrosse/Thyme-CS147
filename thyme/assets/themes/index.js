@@ -11,4 +11,9 @@ const Styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
     },
-  });
+    welcomeMessage : {
+            fontFamily: 'Josefin Sans',
+            fontSize: 20,
+            fontWeight: 'bold',
+  }
+});
