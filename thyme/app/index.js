@@ -23,8 +23,8 @@ export default function App() {
       Hello, Anna
     </Text>
          <Image
-          style = {{ width: 500,
-          height: 500,resizeMode: 'stretch'}}
+          style = {{ width: 300,
+          height: 300,resizeMode: 'stretch'}}
           source={forestImage}
           />
 
