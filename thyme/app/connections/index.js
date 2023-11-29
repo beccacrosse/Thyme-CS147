@@ -6,15 +6,25 @@ import { Styles } from "../../assets/themes";
 
 import { Images } from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
-import {Searchbar}  from "react-native-paper";
-
-
-
+import { Searchbar,Divider } from "react-native-paper";
+import {
+  useFonts,
+  AlegreyaSans_400Regular,
+} from "@expo-google-fonts/alegreya-sans";
 
 export default function Connections() {
-  const [searchQuery, setSearchQuery] = React.useState('');
+  let [fontsLoaded] = useFonts({
+    AlegreyaSans_400Regular,
+  });
 
-  const onChangeSearch = query => setSearchQuery(query);
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const onChangeSearch = (query) => setSearchQuery(query);
+
+  if (!fontsLoaded) {
+    return <Text>font not loaded</Text>;
+  }
+
   return (
     <LinearGradient
       // Background Linear Gradient
@@ -22,43 +32,57 @@ export default function Connections() {
       colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
       start={{ x: 0.6, y: 0.4 }}
     >
-      <View style = {{display: "flex", flexDirection: "column" }}>
+      <View style={{ display: "flex", flexDirection: "column", top: -80 }}>
 
-      <View style = {{width : "100"}}>
-      <Searchbar
-      placeholder="Search"
-      onChangeText={onChangeSearch}
-      value={searchQuery}
-      />
-      </View>
+        <View style = {{top : -100}}>
+          <Text
+            variant="displayLarge"
+            style={{
+              fontFamily: "Alegreya Sans",
+              fontSize: 60,
+              color: "#263E20",
+              fontWeight: "bold",
+            }}
+          >
+            Connections
+          </Text>
+        </View>
 
-       <View>
-      <Text variant="displayLarge" style={{ 
-    fontFamily: "Alegreya Sans",
-    fontSize: 60,
-    color: '#263E20',
-    fontWeight: "bold",}}>
-        Connections
-      </Text>
-      </View> 
+        <View style={{ width: "full" , top: -90, }}>
+          <Searchbar
+            placeholder="Search"
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+          />
+        </View>
 
-      <View style = {Styles.connectionPageProfile}>
-      <Profile
-        profileImage = {Images.anna}
-        profileSize = {200}
+        <View style={{top : -70, width: "full"}}>
+        <Divider bold = "true" />
+        </View>
         
-      />
-       <Text variant="displayLarge" style={{ fontFamily: "Josefin Sans",
-    fontSize: 30,
-    color: '#263E20',
-    fontWeight: "bold",}}>
-        Anna Gao
-      </Text>
-     </View>
+       
+
+        <View style={{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "space-evenly"}}>
+          
+          <Profile profileImage={Images.anna} profileSize={140} />
+          <Text
+            variant="displayLarge"
+            style={{
+              fontFamily: "Alegreya Sans",
+              fontSize: 30,
+              color: "#263E20",
+              fontWeight: "bold",
+            }}
+          >
+            Anna Gao
+          </Text>
+        </View>
+
+        <View style={{top : 0, width: "full"}}>
+        <Divider bold = "true" />
+        </View>
 
       </View>
-      
-    
     </LinearGradient>
   );
 }
