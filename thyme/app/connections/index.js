@@ -1,8 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from 'expo-linear-gradient';
 import {Styles} from '../../assets/themes'
+import AnnaGaoImage from "../../assets/images/AnnaGao.png";
 
 export default function Connections() {
   return (
@@ -14,7 +15,14 @@ export default function Connections() {
         
       >
 
-      <Text>Connections!!</Text>
+     <Text variant="displayLarge" style={Styles.welcomeMessage}>
+      Anna Gao
+     </Text>
+
+     <Image 
+     source= {AnnaGaoImage}
+     style={{width: 400, height: 400, borderRadius: 400/ 2}}/>
+
       <StatusBar style="auto" />
       </LinearGradient>   
   )

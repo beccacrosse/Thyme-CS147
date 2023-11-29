@@ -19,8 +19,8 @@ export default function App() {
         
       >
 
-    <Text variant="displayLarge" style={styles.welcomeText}>
-      Hello, {user}
+    <Text variant="displayLarge" style={Styles.welcomeMessage}>
+      {user} Gao
     </Text>
          <Image
           style = {{ width: 500,
@@ -34,13 +34,6 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  welcomeText :{
-    fontSize: 42,
-    color: '#263E20',
-    marginBottom: 150,
-  },
 
-})
 
 //fill: linear-gradient(180deg, #C2D8A4 0.77%, rgba(194, 216, 164, 0.00) 100%);

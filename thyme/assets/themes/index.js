@@ -11,7 +11,9 @@ const Styles = StyleSheet.create({
   },
   welcomeMessage: {
     fontFamily: "Josefin Sans",
-    fontSize: 20,
+    fontSize: 80,
+    color: '#263E20',
+    marginBottom: 150,
     fontWeight: "bold",
   },
 });
