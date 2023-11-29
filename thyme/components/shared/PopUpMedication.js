@@ -44,10 +44,12 @@ const PopUpMedication = (props) => {
         <MainButton
           buttonText={secondaryButtonText}
           buttonAction={() => setModalVisible(!modalVisible)}
+          isDefault={false}
         />
         <MainButton
           buttonText={primaryButtonText}
           buttonAction={() => setModalVisible(!modalVisible)}
+          isDefault={true}
         />
       </View>
     );

@@ -11,7 +11,7 @@ const PopUp = (props) => {
   const message = props.message; // Body text of PopUp
   const primaryButtonText = props.primaryButtonText; // Text on Primary Button
   const secondaryButtonText = props.secondaryButtonText; // Text on Secondary Button
-  const visibility = props.visibility; // Whether or not the PopUp is visible
+  const visibility = props.isVisibile; // Whether or not the PopUp is visible
 
   // Set the visibility of PopUp based on props' visibility value
   useEffect(() => {
@@ -28,10 +28,12 @@ const PopUp = (props) => {
         <MainButton
           buttonText={secondaryButtonText}
           buttonAction={() => setModalVisible(!modalVisible)}
+          isDefault={false}
         />
         <MainButton
           buttonText={primaryButtonText}
           buttonAction={() => setModalVisible(!modalVisible)}
+          isDefault={true}
         />
       </View>
     );
