@@ -11,6 +11,7 @@ import {
   useFonts,
   AlegreyaSans_400Regular,
 } from "@expo-google-fonts/alegreya-sans";
+import ConnectionContactCard  from "../../components/shared/ConnectionContactCard"
 
 export default function Connections() {
   let [fontsLoaded] = useFonts({
@@ -32,7 +33,7 @@ export default function Connections() {
       colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
       start={{ x: 0.6, y: 0.4 }}
     >
-      <View style={{ display: "flex", flexDirection: "column", top: -80 }}>
+      <View style={{ display: "flex", flexDirection: "column", top: -10 }}>
 
         <View style = {{top : -100}}>
           <Text
@@ -81,6 +82,8 @@ export default function Connections() {
         <View style={{top : 0, width: "full"}}>
         <Divider bold = "true" />
         </View>
+
+        <ConnectionContactCard/>
 
       </View>
     </LinearGradient>
