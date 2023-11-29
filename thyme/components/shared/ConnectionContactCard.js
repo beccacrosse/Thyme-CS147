@@ -5,7 +5,7 @@ import Profile from "../shared/Profile"
 
 
 // Back Button
-const ConnectionContactCard = ({profileImage, profileSize}) => {
+const ConnectionContactCard = ({title,subtitle,profileImage, profileSize}) => {
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
  
   return (
@@ -17,13 +17,13 @@ const ConnectionContactCard = ({profileImage, profileSize}) => {
             <Profile profileImage = {profileImage} profileSize = {profileSize}/>
         </Card.Content>
           <Card.Title
-            title="Doctor Who"
-            subtitle="Professional"
+            title = {title}
+            subtitle = {subtitle}
            
           />
           
           <Card.Actions  >
-            <Button theme={{ colors: { primary: '#263E20' } }} >Ok</Button>
+            <Button theme={{ colors: { primary: '#263E20' } }} >Report</Button>
           </Card.Actions>
           </View>
         </Card>

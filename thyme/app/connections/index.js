@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { Styles } from "../../assets/themes";
@@ -34,7 +34,8 @@ export default function Connections() {
       colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
       start={{ x: 0.6, y: 0.4 }}
     >
-      <View style={{ display: "flex", flexDirection: "column", top: -10 }}>
+      <ScrollView>
+      <View style={{ display: "flex", flexDirection: "column", top: 200 }}>
 
         <View style = {{top : -100}}>
           <Text
@@ -84,9 +85,15 @@ export default function Connections() {
         <Divider bold = "true" />
         </View>
 
-        <ConnectionContactCard profileImage={Images.anna} profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
+        
+
 
       </View>
+      </ScrollView>
     </LinearGradient>
   );
 }
