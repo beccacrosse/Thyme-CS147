@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     borderColor: "#263E20",
-    borderRadius: "50%",
+    borderRadius: "360%",
     resizeMode: "contain",
   },
 });

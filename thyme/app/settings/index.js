@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { Styles } from "../../assets/themes";
-import Profile from "../../components/shared/Profile";
 
 export default function Settings() {
   return (
