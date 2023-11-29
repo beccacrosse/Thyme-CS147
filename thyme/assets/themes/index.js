@@ -10,7 +10,7 @@ const Styles = StyleSheet.create({
     justifyContent: "center",
   },
   welcomeMessage: {
-    fontFamily: "Josefin Sans",
+    fontFamily: "Alegreya Sans",
     fontSize: 80,
     color: "#263E20",
     marginBottom: 150,
@@ -18,7 +18,7 @@ const Styles = StyleSheet.create({
   },
   connectionsPageTitle: {
     top: - 250,
-    fontFamily: "Josefin Sans",
+    fontFamily: "Alegreya Sans",
     fontSize: 60,
     color: '#263E20',
     marginBottom: 150,
