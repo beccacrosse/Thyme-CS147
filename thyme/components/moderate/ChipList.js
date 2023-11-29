@@ -1,6 +1,7 @@
 import React from "react";
 import { Chip } from "react-native-paper";
 import { Dimensions, StyleSheet, Text, View, Pressable } from "react-native";
+import { Styles } from "../../assets/themes";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
@@ -25,14 +26,14 @@ const ChipList = (props) => {
 
 const styles = StyleSheet.create({
   chipContainer: {
-    backgroundColor: "#F0F6E6",
+    backgroundColor: Styles.inputFieldColor,
     borderRadius: "10",
     flexDirection: "row",
     flexWrap: "wrap",
     width: windowWidth * 0.9,
   },
   chip: {
-    backgroundColor: "#B9DEB8",
+    backgroundColor: Styles.backgroundColor,
     margin: 4,
   },
   chipText: {

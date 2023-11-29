@@ -17,10 +17,10 @@ const Styles = StyleSheet.create({
     fontWeight: "bold",
   },
   connectionsPageTitle: {
-    top: - 250,
+    top: -250,
     fontFamily: "Alegreya Sans",
     fontSize: 60,
-    color: '#263E20',
+    color: "#263E20",
     marginBottom: 150,
     fontWeight: "bold",
   },
@@ -38,7 +38,7 @@ const Styles = StyleSheet.create({
   navBarSelectedColor: "#C2D8A4",
   toggleUnselectedColor: "#F7FFEB",
   toggleSelectedColor: "#3C6433",
-  inputFieldColor: "#FOF6E6",
+  inputFieldColor: "#F0F6E6", //Panache
 });
 
 export { Icons, Images, Styles };
