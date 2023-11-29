@@ -6,23 +6,21 @@ const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 // List of Chips
 const ChipList = (props) => {
-  const symptoms = ["Drowsy", "Headache", "Anxiety", "Loss of Appetite"];
-  return (
-    <View style={styles.chipContainer}>
-      <Chip style={styles.chip}>
-        <Text style={styles.chipText}>Sample text</Text>
-      </Chip>
-      <Chip style={styles.chip}>
-        <Text style={styles.chipText}>Headache</Text>
-      </Chip>
-      <Chip style={styles.chip}>
-        <Text style={styles.chipText}>Fatigue</Text>
-      </Chip>
-      <Chip style={styles.chip}>
-        <Text style={styles.chipText}>Sample text</Text>
-      </Chip>
-    </View>
-  );
+  const values = props.chipValues; // Array of values contained within the chips
+
+  if (values) {
+    chips = values.map((item) => {
+      return (
+        <Chip style={styles.chip}>
+          <Text style={styles.chipText}>{item}</Text>
+        </Chip>
+      );
+    });
+  } else {
+    chips = <View></View>;
+  }
+
+  return <View style={styles.chipContainer}>{chips}</View>;
 };
 
 const styles = StyleSheet.create({
