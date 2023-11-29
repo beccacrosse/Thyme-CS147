@@ -30,6 +30,7 @@ const Styles = StyleSheet.create({
   navBarSelectedColor: '#C2D8A4',
   toggleUnselectedColor: '#F7FFEB',
   toggleSelectedColor: '#3C6433',
+  inputFieldColor: '#FOF6E6',
 });
 
 export { Icons, Images, Styles };
