@@ -20,7 +20,7 @@ export default function App() {
       >
 
     <Text variant="displayLarge" style={Styles.welcomeMessage}>
-      {user} Gao
+      Hello, Anna
     </Text>
          <Image
           style = {{ width: 500,
