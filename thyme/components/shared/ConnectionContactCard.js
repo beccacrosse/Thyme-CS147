@@ -1,22 +1,25 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, } from "react-native";
 import { Avatar, Card, IconButton, Button } from "react-native-paper";
+import Profile from "../shared/Profile"
 
 
 // Back Button
-const ConnectionContactCard = (props) => {
-  const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
-  
+const ConnectionContactCard = ({profileImage, profileSize}) => {
+  //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
+ 
   return (
     <View>
       
         <Card >
-          <View style = {{ width : 240, display : "flex", flexDirection : "row" ,justifyContent : 'space-between', alignItems : "center"}}>
+          <View style = {{ width : 140, display : "flex", flexDirection : "row" ,justifyContent : 'space-between', alignItems : "center"}}>
+        <Card.Content>
+            <Profile profileImage = {profileImage} profileSize = {profileSize}/>
+        </Card.Content>
           <Card.Title
             title="Doctor Who"
             subtitle="Professional"
-            left={LeftContent}
-            
+           
           />
           
           <Card.Actions  >

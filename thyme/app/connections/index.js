@@ -7,6 +7,7 @@ import { Styles } from "../../assets/themes";
 import { Images } from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
 import { Searchbar,Divider } from "react-native-paper";
+
 import {
   useFonts,
   AlegreyaSans_400Regular,
@@ -79,11 +80,11 @@ export default function Connections() {
           </Text>
         </View>
 
-        <View style={{top : 0, width: "full"}}>
+        <View style={{top : -30, width: "full"}}>
         <Divider bold = "true" />
         </View>
 
-        <ConnectionContactCard/>
+        <ConnectionContactCard profileImage={Images.anna} profileSize={60}/>
 
       </View>
     </LinearGradient>
