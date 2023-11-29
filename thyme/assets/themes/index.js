@@ -16,6 +16,14 @@ const Styles = StyleSheet.create({
     marginBottom: 150,
     fontWeight: "bold",
   },
+  connectionsPageTitle: {
+    top: - 250,
+    fontFamily: "Josefin Sans",
+    fontSize: 60,
+    color: '#263E20',
+    marginBottom: 150,
+    fontWeight: "bold",
+  },
   //heading text (i.e. Today's Plan, titles of each screen)
   //subheading text (name of medication on log page)
   //information text (detailed text)
