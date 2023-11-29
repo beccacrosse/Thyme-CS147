@@ -35,7 +35,7 @@ export default function Connections() {
       start={{ x: 0.6, y: 0.4 }}
     >
       <ScrollView>
-      <View style={{ display: "flex", flexDirection: "column", top: 200 }}>
+      <View style={{ display: "flex", flexDirection: "column", top: 150 }}>
 
         <View style = {{top : -100}}>
           <Text
@@ -81,15 +81,16 @@ export default function Connections() {
           </Text>
         </View>
 
-        <View style={{top : -30, width: "full"}}>
+        {/* <View style={{top : -30, width: "full"}}>
         <Divider bold = "true" />
-        </View>
+        </View> */}
 
+        <View style = {{top : -40}}>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
-        
+        </View>
 
 
       </View>

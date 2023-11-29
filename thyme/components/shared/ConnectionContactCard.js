@@ -9,7 +9,7 @@ const ConnectionContactCard = ({title,subtitle,profileImage, profileSize}) => {
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
  
   return (
-    <View>
+    <View style = {{marginBottom: 10}}>
       
         <Card >
           <View style = {{ width : 140, display : "flex", flexDirection : "row" ,justifyContent : 'space-between', alignItems : "center"}}>
