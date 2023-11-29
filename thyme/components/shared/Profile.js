@@ -8,16 +8,18 @@ const Profile = (props) => {
   const size = props.profileSize; // Size of the profile image, used for both width and height
   const image = props.profileImage; // Image for the profile
 
+  // TO DO: Control whether profile image is pressable
   return (
     <View>
-      <Pressable>
-        <View style={[styles.profileContainer, { borderWidth: size * 0.07 }]}>
-          <Image
-            source={image}
-            style={[styles.icon, { width: size, height: size }]}
-          />
-        </View>
-      </Pressable>
+      <View style={styles.profileContainer}>
+        <Image
+          source={image}
+          style={[
+            styles.icon,
+            { width: size, height: size, borderWidth: size * 0.07 },
+          ]}
+        />
+      </View>
     </View>
   );
 };
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
     borderColor: "#263E20",
   },
   icon: {
+    borderColor: "#263E20",
     borderRadius: "50%",
     resizeMode: "contain",
   },
