@@ -3,6 +3,13 @@ import Images from "../images/images";
 import { StyleSheet, Text, View } from "react-native";
 
 const Styles = StyleSheet.create({
+  connectionPageProfile: {
+    top: -400,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -12,14 +19,6 @@ const Styles = StyleSheet.create({
   welcomeMessage: {
     fontFamily: "Alegreya Sans",
     fontSize: 80,
-    color: "#263E20",
-    marginBottom: 150,
-    fontWeight: "bold",
-  },
-  connectionsPageTitle: {
-    top: -250,
-    fontFamily: "Alegreya Sans",
-    fontSize: 60,
     color: "#263E20",
     marginBottom: 150,
     fontWeight: "bold",
