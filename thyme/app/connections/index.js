@@ -92,7 +92,7 @@ export default function Connections() {
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
         
         <View style = {{marginTop: 40}}>
-        <Button theme={{ colors: { primary: '#263E20' } }}mode = "outlined" icon = {Icons.addUser} size = {38}>
+        <Button theme={{ colors: { primary: '#263E20' } }} mode = "outlined" icon = {Icons.addUser} size = {38}>
           Add new Connection
         </Button>
         </View>
