@@ -87,9 +87,9 @@ export default function Connections() {
 
         <View style = {{top : -40}}>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
-        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
-        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
-        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60}/>
+       
         </View>
 
 
