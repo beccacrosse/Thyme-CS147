@@ -7,7 +7,7 @@ import { Styles } from "../../assets/themes";
 import { Images } from "../../assets/themes";
 import {Icons} from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
-import { Searchbar,Divider } from "react-native-paper";
+import { Searchbar,Divider,Button} from "react-native-paper";
 
 import {
   useFonts,
@@ -90,6 +90,13 @@ export default function Connections() {
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60} icon = {Icons.report}/>
         <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
+        
+        <View style = {{marginTop: 40}}>
+        <Button theme={{ colors: { primary: '#263E20' } }}mode = "outlined" icon = {Icons.addUser} size = {38}>
+          Add new Connection
+        </Button>
+        </View>
+
        
         </View>
 
