@@ -26,7 +26,7 @@ const ChipList = (props) => {
 
 const styles = StyleSheet.create({
   chipContainer: {
-    backgroundColor: Styles.inputFieldColor,
+    //backgroundColor: Styles.inputFieldColor,
     borderRadius: "10",
     flexDirection: "row",
     flexWrap: "wrap",

@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
-import ChipList from "./components/moderate/ChipList";
 
 export default function App() {
   return (
