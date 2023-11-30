@@ -5,6 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Styles } from "../../assets/themes";
 
 import { Images } from "../../assets/themes";
+import {Icons} from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
 import { Searchbar,Divider } from "react-native-paper";
 
@@ -86,9 +87,9 @@ export default function Connections() {
         </View> */}
 
         <View style = {{top : -40}}>
-        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60}/>
-        <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60}/>
-        <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60}/>
+        <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60} icon = {Icons.report}/>
+        <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
+        <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
        
         </View>
 
