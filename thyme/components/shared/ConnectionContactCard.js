@@ -21,8 +21,8 @@ const ConnectionContactCard = ({
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
   const [modalVisible, setModalVisible] = useState(false);
 
-  const handleVisibility = (visible) => {
-    setModalVisible(visible);
+  function  handleVisibility() {
+    setModalVisible(!modalVisible);
   };
 
   return (

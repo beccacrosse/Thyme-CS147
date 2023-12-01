@@ -19,40 +19,39 @@ import ReportTabs from "./ReportTabs";
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 const ReportModal = (props) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(props.isVisible);
 
-  let visibility = props.isVisible;
+  //let visibility = props.isVisible;
 
-  useEffect(() => {
-    if (visibility != null) {
-      setModalVisible(visibility);
-    }
-  }, [visibility]);
+  // useEffect(() => {
+  //   if (visibility != null) {
+  //     setModalVisible(visibility);
+  //   }
+  // }, [visibility]);
 
-  console.log(visibility);
+  //console.log(visibility);
 
-  handleBackButtonClick = () => {
-    setModalVisible(false);
-    props.visibilityFunction(modalVisible);
-    console.log(modalVisible);
-  };
+  // handleBackButtonClick = () => {
+  //   props.visibilityFunction(!modalVisible);
+  //   console.log(modalVisible);
+  // };
 
   return (
     <View>
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
+        visible={props.isVisible}
+        // onRequestClose={() => {
+        //   Alert.alert("Modal has been closed.");
+        //   setModalVisible(!modalVisible);
+        // }}
       >
         <SafeAreaView style={{ height: windowHeight }}>
           <View>
             <BackButton
               style={{ alignSelf: "flex-start" }}
-              buttonAction={() => handleBackButtonClick()}
+              buttonAction={() => props.visibilityFunction()}
             />
             <View style={styles.profile}>
               <Profile profileImage={Images.anna} profileSize={140} />
