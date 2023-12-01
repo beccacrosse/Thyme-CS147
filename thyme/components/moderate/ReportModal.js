@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 import {
   Dimensions,
   Modal,
@@ -7,6 +8,7 @@ import {
   Text,
   View,
   Pressable,
+  ScrollView
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ReportPage from "./ReportPage";
@@ -15,6 +17,7 @@ import MainButton from "../shared/MainButton";
 import Profile from "../shared/Profile";
 import { Images } from "../../assets/themes";
 import ReportTabs from "./ReportTabs";
+import { Styles } from "../../assets/themes";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
@@ -37,17 +40,25 @@ const ReportModal = (props) => {
   // };
 
   return (
-    <View>
-      <Modal
+    <Modal
         animationType="slide"
-        transparent={true}
+        transparent={false}
         visible={props.isVisible}
         // onRequestClose={() => {
         //   Alert.alert("Modal has been closed.");
         //   setModalVisible(!modalVisible);
         // }}
       >
-        <SafeAreaView style={{ height: windowHeight }}>
+    <LinearGradient
+    // Background Linear Gradient
+    style={Styles.container}
+    colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
+    start={{ x: 0.6, y: 0.4 }}
+  >
+    {/* <ScrollView> */}
+    <SafeAreaView style={{ display: "flex", flexDirection: "column", top: 40 }}>
+    
+        
           <View>
             <BackButton
               style={{ alignSelf: "flex-start" }}
@@ -66,9 +77,11 @@ const ReportModal = (props) => {
               <MainButton buttonText="Share" buttonAction={() => {}} />
             </View>
           </View>
-        </SafeAreaView>
-      </Modal>
-    </View>
+   
+    </SafeAreaView>
+    {/* </ScrollView> */}
+    </LinearGradient>
+    </Modal>
   );
 };
 
