@@ -21,8 +21,8 @@ const ConnectionContactCard = ({
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
   const [modalVisible, setModalVisible] = useState(false);
 
-  const getVisibility = (visible) => {
-    setModalVisible(true);
+  const setVisibility = () => {
+    setModalVisible(!modalVisible);
   };
 
   return (
@@ -48,7 +48,7 @@ const ConnectionContactCard = ({
           </View>
         </View>
       </Modal> */}
-      <ReportModal isVisible={modalVisible} />
+      <ReportModal change={setVisibility} />
 
       <Card>
         <View

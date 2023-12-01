@@ -18,16 +18,16 @@ import ReportTabs from "./ReportTabs";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
-const ReportModal = (props) => {
-  const [modalVisible, setModalVisible] = useState(false);
+const ReportModal = ({change}) => {
+  //const [modalVisible, setModalVisible] = useState(false);
 
   let visibility = props.isVisible;
 
-  useEffect(() => {
-    if (visibility != null) {
-      setModalVisible(visibility);
-    }
-  }, [visibility]);
+  // useEffect(() => {
+  //   if (visibility != null) {
+  //     setModalVisible(visibility);
+  //   }
+  // }, [visibility]);
 
   console.log(visibility);
 
@@ -46,7 +46,7 @@ const ReportModal = (props) => {
           <View>
             <BackButton
               style={{ alignSelf: "flex-start" }}
-              buttonAction={() => setModalVisible(false)}
+              buttonAction={() => change()}
             />
             <View style={styles.profile}>
               <Profile profileImage={Images.anna} profileSize={140} />
