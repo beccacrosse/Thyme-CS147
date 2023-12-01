@@ -31,6 +31,12 @@ const ReportModal = (props) => {
 
   console.log(visibility);
 
+  handleBackButtonClick = () => {
+    setModalVisible(false);
+    props.visibilityFunction(modalVisible);
+    console.log(modalVisible);
+  };
+
   return (
     <View>
       <Modal
@@ -46,7 +52,7 @@ const ReportModal = (props) => {
           <View>
             <BackButton
               style={{ alignSelf: "flex-start" }}
-              buttonAction={() => setModalVisible(false)}
+              buttonAction={() => handleBackButtonClick()}
             />
             <View style={styles.profile}>
               <Profile profileImage={Images.anna} profileSize={140} />
