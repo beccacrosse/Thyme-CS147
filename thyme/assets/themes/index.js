@@ -33,11 +33,13 @@ const Styles = StyleSheet.create({
   navBarColor: "#3C6433",
   completedColor: "#64C24D", // Apple
   backgroundColor: "#C2D8A4",
-  buttonOutlineColor: "#263E20",
+  buttonOutlineColor: "#3C6433",
   navBarSelectedColor: "#C2D8A4",
   toggleUnselectedColor: "#F7FFEB",
   toggleSelectedColor: "#3C6433",
-  inputFieldColor: "#F0F6E6", //Panache
+  //inputFieldColor: "#F0F6E6", //Panache
+  inputFieldColor: "#263E20", //Panache
+  contentBackground: "#F0F6E6"
 });
 
 export { Icons, Images, Styles };

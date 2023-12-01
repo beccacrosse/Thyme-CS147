@@ -18,10 +18,10 @@ const Overview = (props) => {
   const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
   return (
-    <ScrollView>
+    <ScrollView style = {{backgroundColor : Styles.contentBackground}}>
       <View style={styles.sectionContainer}>
         <Text style={styles.subheaderText}>Patient Information</Text>
-        <Card style={{ backgroundColor: Styles.inputFieldColor }}>
+        <Card style={{ backgroundColor: Styles.contentBackground}}>
           <Card.Content>
             <Text variant="bodyMedium">
               <Text style={{ fontWeight: "bold" }}> Patient Name: </Text> Anna
@@ -40,7 +40,7 @@ const Overview = (props) => {
       </View>
       <View style={styles.sectionContainer}>
         <Text style={styles.subheaderText}>Medications</Text>
-        <Card style={{ backgroundColor: Styles.inputFieldColor }}>
+        <Card style={{ backgroundColor: Styles.contentBackground}}>
           <Card.Title
             title="Adderall"
             subtitle="Schedule: Daily as evening"
@@ -65,7 +65,7 @@ const Overview = (props) => {
       </View>
       <View style={styles.sectionContainer}>
         <Text style={styles.subheaderText}>Symptoms</Text>
-        <Card style={{ backgroundColor: Styles.inputFieldColor }}>
+        <Card style={{ backgroundColor: Styles.contentBackground}}>
           <Card.Content>
             <ChipList
               chipValues={[
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginLeft: 20,
     marginTop: 20,
+    
   },
   subheaderText: {
     color: Styles.buttonOutlineColor,

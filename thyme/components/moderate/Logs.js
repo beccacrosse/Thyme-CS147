@@ -8,10 +8,10 @@ const Logs = (props) => {
   const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
   return (
-    <ScrollView>
+    <ScrollView  style = {{backgroundColor : Styles.contentBackground}}>
       <View style={styles.sectionContainer}>
         <Text style={styles.subheaderText}>November 30, 2023</Text>
-        <Card style={{ backgroundColor: Styles.inputFieldColor }}>
+        <Card style={{ backgroundColor: Styles.contentBackground }}>
           <Card.Title
             title="Ativan"
             subtitle="Taken at 8:00am"
@@ -19,7 +19,7 @@ const Logs = (props) => {
           />
         </Card>
         <Card
-          style={{ backgroundColor: Styles.inputFieldColor, marginTop: 10 }}
+          style={{ backgroundColor: Styles.contentBackground, marginTop: 10 }}
         >
           <Card.Title
             title="Vitamin D3"
@@ -29,7 +29,7 @@ const Logs = (props) => {
         </Card>
         <Card
           style={{
-            backgroundColor: Styles.inputFieldColor,
+            backgroundColor: Styles.contentBackground,
             marginBottom: 20,
             marginTop: 10,
           }}
@@ -41,7 +41,7 @@ const Logs = (props) => {
           />
         </Card>
         <Text style={styles.subheaderText}>November 29, 2023</Text>
-        <Card style={{ backgroundColor: Styles.inputFieldColor }}>
+        <Card style={{ backgroundColor: Styles.contentBackground }}>
           <Card.Title
             title="Ativan"
             subtitle="Taken at 8:00am"
@@ -49,7 +49,7 @@ const Logs = (props) => {
           />
         </Card>
         <Card
-          style={{ backgroundColor: Styles.inputFieldColor, marginTop: 10 }}
+          style={{ backgroundColor: Styles.contentBackground, marginTop: 10 }}
         >
           <Card.Title
             title="Vitamin D3"
@@ -58,7 +58,7 @@ const Logs = (props) => {
           />
         </Card>
         <Card
-          style={{ backgroundColor: Styles.inputFieldColor, marginTop: 10 }}
+          style={{ backgroundColor: Styles.contentBackground, marginTop: 10 }}
         >
           <Card.Title
             title="Aspirin"
@@ -68,7 +68,7 @@ const Logs = (props) => {
         </Card>
         <Card
           style={{
-            backgroundColor: Styles.inputFieldColor,
+            backgroundColor: Styles.contentBackground,
             marginBottom: 20,
             marginTop: 10,
           }}
@@ -81,7 +81,7 @@ const Logs = (props) => {
         </Card>
         <Text style={styles.subheaderText}>November 28, 2023</Text>
         <Card
-          style={{ backgroundColor: Styles.inputFieldColor, marginTop: 10 }}
+          style={{ backgroundColor: Styles.contentBackground, marginTop: 10 }}
         >
           <Card.Title
             title="Vitamin D3"
@@ -90,7 +90,7 @@ const Logs = (props) => {
           />
         </Card>
         <Card
-          style={{ backgroundColor: Styles.inputFieldColor, marginTop: 10 }}
+          style={{ backgroundColor: Styles.contentBackground, marginTop: 10 }}
         >
           <Card.Title
             title="Aspirin"

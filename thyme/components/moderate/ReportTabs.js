@@ -15,7 +15,7 @@ import Logs from "./Logs";
 const ReportTabs = (props) => {
   const [index, setIndex] = useState(0);
 
-  console.log(index);
+//  console.log(index);
 
   return (
     <>
@@ -33,11 +33,11 @@ const ReportTabs = (props) => {
           title="Overview"
           titleStyle={(active) => ({
             fontSize: 18,
-            color: active ? Styles.inputFieldColor : Styles.buttonOutlineColor,
+            color: active ? Styles.inputFieldColor : "white",
           })}
           containerStyle={(active) => ({
             backgroundColor: active
-              ? Styles.buttonOutlineColor
+              ? Styles.contentBackground
               : Styles.inputFieldColor,
           })}
         />
@@ -45,11 +45,11 @@ const ReportTabs = (props) => {
           title="Logs"
           titleStyle={(active) => ({
             fontSize: 18,
-            color: active ? Styles.inputFieldColor : Styles.buttonOutlineColor,
+            color: active ? Styles.inputFieldColor : "white",
           })}
           containerStyle={(active) => ({
             backgroundColor: active
-              ? Styles.buttonOutlineColor
+              ? Styles.contentBackground
               : Styles.inputFieldColor,
           })}
         />
