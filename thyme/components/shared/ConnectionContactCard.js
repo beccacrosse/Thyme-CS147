@@ -8,6 +8,7 @@ import {
   MD3Colors,
 } from "react-native-paper";
 import Profile from "../shared/Profile";
+import ReportModal from "../moderate/ReportModal";
 
 // Back Button
 const ConnectionContactCard = ({
@@ -19,28 +20,35 @@ const ConnectionContactCard = ({
 }) => {
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
   const [modalVisible, setModalVisible] = useState(false);
+
+  const getVisibility = (visible) => {
+    setModalVisible(true);
+  };
+
   return (
-    <View style = {{marginBottom : 10}}>
-      <Modal
+    <View style={{ marginBottom: 10 }}>
+      {/* <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
+          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
-        }}>
+        }}
+      >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Hello World!</Text>
             <Button
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
+              onPress={() => setModalVisible(!modalVisible)}
+            >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Button>
           </View>
         </View>
-      </Modal>
-     
+      </Modal> */}
+      <ReportModal isVisible={modalVisible} />
 
       <Card>
         <View
@@ -74,13 +82,12 @@ const ConnectionContactCard = ({
 };
 
 const styles = StyleSheet.create({
-  
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 22,
-    marginBottom: 10, 
+    marginBottom: 10,
   },
   modalView: {
     margin: 20,

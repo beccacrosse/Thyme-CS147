@@ -19,7 +19,17 @@ import ReportTabs from "./ReportTabs";
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 const ReportModal = (props) => {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  let visibility = props.isVisible;
+
+  useEffect(() => {
+    if (visibility != null) {
+      setModalVisible(visibility);
+    }
+  }, [visibility]);
+
+  console.log(visibility);
 
   return (
     <View>
