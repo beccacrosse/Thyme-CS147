@@ -8,10 +8,12 @@ import {
   MD3Colors,
 } from "react-native-paper";
 import Profile from "../shared/Profile";
+
 import ReportModal from "../moderate/ReportModal";
 
 // Back Button
 const ConnectionContactCard = ({
+  type,
   title,
   subtitle,
   profileImage,
@@ -21,12 +23,14 @@ const ConnectionContactCard = ({
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
   const [modalVisible, setModalVisible] = useState(false);
 
+
   const setVisibility = () => {
     setModalVisible(!modalVisible);
   };
 
   return (
     <View style={{ marginBottom: 10 }}>
+
       {/* <Modal
         animationType="slide"
         transparent={true}
@@ -48,7 +52,9 @@ const ConnectionContactCard = ({
           </View>
         </View>
       </Modal> */}
+
       <ReportModal change={setVisibility} />
+
 
       <Card>
         <View

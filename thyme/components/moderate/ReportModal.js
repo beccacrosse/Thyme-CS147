@@ -18,6 +18,7 @@ import ReportTabs from "./ReportTabs";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
+
 const ReportModal = ({change}) => {
   //const [modalVisible, setModalVisible] = useState(false);
 
@@ -30,6 +31,8 @@ const ReportModal = ({change}) => {
   // }, [visibility]);
 
   console.log(visibility);
+
+
 
   return (
     <View>
