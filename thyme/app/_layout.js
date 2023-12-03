@@ -3,6 +3,19 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
+
 export default function HomeLayout() {
   return (
     <Tabs
@@ -20,7 +33,7 @@ export default function HomeLayout() {
         }}
       />
     <Tabs.Screen
-        name="log/index"
+        name="log"
         options={{
           tabBarLabel: "Log",
           tabBarIcon: ({ size, color }) => (
