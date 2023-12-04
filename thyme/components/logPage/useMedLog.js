@@ -1,55 +1,75 @@
 
-import { Dimensions, Image, Button, StyleSheet, SafeAreaView, Text, Pressable, View } from "react-native";
-import { Icons, Styles } from "../../assets/themes";
+import { ScrollView, Dimensions, Image, StyleSheet, SafeAreaView, Text, Pressable, View } from "react-native";
+import { Images, Styles } from "../../assets/themes";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { Feather } from '@expo/vector-icons';
+import { Avatar, Button, Card } from "react-native-paper";
+
+import * as React from 'react';
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
-export default function useMedLog() {
+export default function useMedLog(medication) {
   // const image = medication.imageUrl;
   // const title = medication.medTitle;
   // const dose = medication.dose;
-  const image = Icons.activan;
-  const title = 'activan';
-  const dose = '1 pill once per day';
+  const size = 60;
+  const title = medication.name;
+  const image = Images.asprin;
+  const dose = medication.dose;
   const goButton = 
   <Pressable style={styles.goButton}>
     <Feather name="arrow-right" size={45} color={"black"} />
   </Pressable>
   
   return(
-      <View style={styles.logContainer}>
-        <View style={styles.imageContainer}>
-          <Image source={{uri: image}} style={styles.pillImage}/> 
+    <Card
+          style={{
+            backgroundColor: "white",
+            marginBottom: 20,
+            marginTop: 10,
+          }}
+        >
+          {/* <Card.Title
+            title="Aspirin"
+            subtitle="Taken at 12:00pm"
+            left={LeftContent}
+          /> */}
+           <View
+          style={{
+            width: "full",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Card.Content>
+            <Image style={[
+            styles.icon,
+            { width: size, height: size },
+          ]} source={image} />
+          </Card.Content>
+          <Card.Title  title={title}
+            subtitle={dose}/>
         </View>
-        <Link style={styles.pillInfo} href={{pathname: '#', params: {title}}} asChild>
-        <Pressable>
-        <View style={{}}>
-          <Text style={styles.logTextPrimary} numberOfLines={1}>{title}</Text>
-          <Text style={styles.logTextSecondary} numberOfLines={1}>{dose}</Text>
-        </View>
-        </Pressable>
-        </Link>
-        <Link style={styles.buttonContainer} href={{pathname: './cardInteractionPages/medCheckin', params: {}}} asChild>
-            {goButton}
-        </Link>
-      </View>
+          
+        </Card>
+  
+  
   )
 }
 
 const styles = {
   logContainer :{
     backgroundColor: Styles.completedColor,
-    borderColor: Styles.buttonOutlineColor,
-    borderRadius: 3,
+    flexDirection: "row",
+    justifyContent: "space-between",
     borderRadius: "10%",
     width: windowWidth * .9,
     height: windowHeight * .085,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+
   },
   imageContainer: {
     flex: 1,
