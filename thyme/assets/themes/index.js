@@ -20,7 +20,7 @@ const Styles = StyleSheet.create({
     fontFamily: "Alegreya Sans",
     fontSize: 80,
     color: "#263E20",
-    marginBottom: 150,
+    marginBottom: 90,
     fontWeight: "bold",
   },
   //heading text (i.e. Today's Plan, titles of each screen)
@@ -39,7 +39,7 @@ const Styles = StyleSheet.create({
   toggleSelectedColor: "#3C6433",
   //inputFieldColor: "#F0F6E6", //Panache
   inputFieldColor: "#263E20", //Panache
-  contentBackground: "#F0F6E6"
+  contentBackground: "#F0F6E6",
 });
 
 export { Icons, Images, Styles };
