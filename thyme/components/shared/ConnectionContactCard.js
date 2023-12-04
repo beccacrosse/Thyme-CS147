@@ -10,7 +10,7 @@ import {
 import Profile from "../shared/Profile";
 import ReportModal from "../moderate/ReportModal";
 import ReminderModal from "../moderate/ReminderModal";
-
+import greenTick from "../../assets/themes"
 // Back Button
 const ConnectionContactCard = ({
   title,
@@ -24,17 +24,16 @@ const ConnectionContactCard = ({
 
   function handleVisibility() {
     setModalVisible(!modalVisible);
-  };
+  }
 
   if (subtitle == "Professional") {
     return (
       <View style={{ marginBottom: 10 }}>
-       
         <ReportModal
           isVisible={modalVisible}
           visibilityFunction={handleVisibility}
         />
-  
+
         <Card>
           <View
             style={{
@@ -49,7 +48,7 @@ const ConnectionContactCard = ({
               <Profile profileImage={profileImage} profileSize={profileSize} />
             </Card.Content>
             <Card.Title title={title} subtitle={subtitle} />
-  
+
             <Card.Actions>
               <IconButton
                 theme={{ colors: { primary: "#263E20" } }}
@@ -64,15 +63,20 @@ const ConnectionContactCard = ({
         </Card>
       </View>
     );
-  }else{
-    const content = "Your " + subtitle.toLowerCase() + " " + title + " has not yet taken medication for today, do you want to send her a reminder";
+  } else {
+    const content =
+      "Your " +
+      subtitle.toLowerCase() +
+      " " +
+      title +
+      " has not yet taken medication for today, do you want to send her a reminder";
     return (
       <View style={{ marginBottom: 10 }}>
-       
-       
-
-        <ReminderModal visible = {modalVisible} content = {content}  visibilityFunction={handleVisibility}/>
-  
+        <ReminderModal
+          visible={modalVisible}
+          content={content}
+          visibilityFunction={handleVisibility}
+        />
         <Card>
           <View
             style={{
@@ -87,8 +91,18 @@ const ConnectionContactCard = ({
               <Profile profileImage={profileImage} profileSize={profileSize} />
             </Card.Content>
             <Card.Title title={title} subtitle={subtitle} />
-  
+
+
             <Card.Actions>
+
+            <IconButton
+                theme={{ colors: { primary: "#263E20" } }}
+                size={34}
+                iconColor="#263E20"
+                mode="default"
+                icon={greenTick}
+                onPress={() => handleVisibility(!modalVisible)}
+              ></IconButton>
               <IconButton
                 theme={{ colors: { primary: "#263E20" } }}
                 size={34}
@@ -97,14 +111,14 @@ const ConnectionContactCard = ({
                 icon={icon}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
+
+              
             </Card.Actions>
           </View>
         </Card>
       </View>
     );
   }
-
-  
 };
 
 const styles = StyleSheet.create({
