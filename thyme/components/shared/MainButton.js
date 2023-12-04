@@ -7,16 +7,25 @@ const MainButton = (props) => {
   const title = props.buttonText; // Text on button
   const action = props.buttonAction; // Action that occurs when button is clicked
   const isDefault = props.isDefault != undefined ? props.isDefault : true; // If true or undefined, button will be green, if false, button will only have an outline
+  const isDisabled = props.isDisabled != undefined ? props.isDisabled : false;
 
   if (isDefault == true) {
     buttonDisplayed = (
-      <Pressable style={[styles.button, styles.buttonDefault]} onPress={action}>
+      <Pressable
+        style={[styles.button, styles.buttonDefault]}
+        onPress={action}
+        disabled={isDisabled}
+      >
         <Text style={styles.textStyle}>{title}</Text>
       </Pressable>
     );
   } else {
     buttonDisplayed = (
-      <Pressable style={[styles.button, styles.buttonOther]} onPress={action}>
+      <Pressable
+        style={[styles.button, styles.buttonOther]}
+        onPress={action}
+        disabled={isDisabled}
+      >
         <Text style={styles.textStyle}>{title}</Text>
       </Pressable>
     );
@@ -33,7 +42,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 5,
     marginRight: 5,
-    width: 100,
+    width: 123,
   },
   buttonDefault: {
     backgroundColor: Styles.completedColor,

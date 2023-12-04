@@ -18,6 +18,7 @@ import { Images } from "../../assets/themes";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
+//DO NOT USE
 export default function ReportPage() {
   return (
     <SafeAreaView style={{ height: windowHeight }}>
