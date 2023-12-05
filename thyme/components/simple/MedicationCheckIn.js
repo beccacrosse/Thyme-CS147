@@ -19,12 +19,14 @@ import { Card } from "react-native-paper";
 import MainButton from "../shared/MainButton";
 import { Overlay } from "react-native-elements";
 import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 const MedicationCheckIn = (props) => {
   const [text, setText] = useState("");
   const [visible, setVisible] = useState(false);
+  const [infoVisible, setInfoVisible] = useState(false);
   const [isButtonDefault, setButtonDefault] = useState(true);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [isTextEditable, setTextEditable] = useState(true);
@@ -32,6 +34,9 @@ const MedicationCheckIn = (props) => {
 
   const medicationIcon = props.medicationIcon;
   const medicationName = props.medicationName;
+  const medicationDescription = props.medicationDescription
+    ? props.medicationDescription
+    : "[Description of Medication]";
   const daysDone = props.daysDone;
   const daysAway = props.daysAway;
   const pillNumber = props.pillNumber;
@@ -39,8 +44,14 @@ const MedicationCheckIn = (props) => {
   const time = props.time;
   const date = props.date;
 
+  // Toggles the Log Information Overlay
   const toggleOverlay = () => {
     setVisible(!visible);
+  };
+
+  // Toggles the Information Overlay
+  const toggleInfoOverlay = () => {
+    setInfoVisible(!infoVisible);
   };
 
   const buttonAction = () => {
@@ -112,6 +123,18 @@ const MedicationCheckIn = (props) => {
           <MainButton buttonText="OK" buttonAction={toggleOverlay} />
         </View>
       </Overlay>
+      <Overlay
+        isVisible={infoVisible}
+        onBackdropPress={toggleInfoOverlay}
+        style={{ backgroundColor: Styles.inputFieldColor }}
+      >
+        <View style={styles.modalView}>
+          <Image source={medicationIcon} style={styles.medicationIconSmall} />
+          <Text style={styles.modalTitleText}>{medicationName}</Text>
+          <Text style={styles.modalBodyText}>{medicationDescription}</Text>
+          <MainButton buttonText="OK" buttonAction={toggleInfoOverlay} />
+        </View>
+      </Overlay>
       <View style={styles.headerContainer}>
         <View>
           <BackButton />
@@ -124,7 +147,16 @@ const MedicationCheckIn = (props) => {
       <ScrollView>
         <View style={styles.medicationContainer}>
           <Image source={medicationIcon} style={styles.medicationIcon} />
-          <Text style={styles.titleText}>{medicationName} </Text>
+          <View style={{ flexDirection: "row" }}>
+            <Text style={styles.titleText}>{medicationName} </Text>
+            <Pressable onPress={toggleInfoOverlay}>
+              <Ionicons
+                name="ios-information-circle-outline"
+                size={16}
+                color="black"
+              />
+            </Pressable>
+          </View>
         </View>
         <View>
           <Text style={{ fontSize: 16, marginLeft: 13, marginTop: 10 }}>
@@ -218,6 +250,12 @@ const styles = StyleSheet.create({
     width: 150,
     resizeMode: "contain",
   },
+  medicationIconSmall: {
+    height: 50,
+    margin: 5,
+    width: 50,
+    resizeMode: "contain",
+  },
   medicationContainer: {
     alignItems: "center",
   },
@@ -227,6 +265,7 @@ const styles = StyleSheet.create({
     padding: 35,
     alignItems: "center",
     elevation: 5,
+    width: windowWidth * 0.8,
   },
   modalTitleText: {
     fontSize: 22, // Size of Title Font
@@ -236,7 +275,8 @@ const styles = StyleSheet.create({
   },
   modalBodyText: {
     fontSize: 15,
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 10,
   },
   nextTreeContainer: {
     flexDirection: "row",
