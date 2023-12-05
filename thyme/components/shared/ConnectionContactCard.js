@@ -10,8 +10,9 @@ import {
 import Profile from "../shared/Profile";
 import ReportModal from "../moderate/ReportModal";
 import ReminderModal from "../moderate/ReminderModal";
-import greenTick from "../../assets/themes"
-// Back Button
+import greenTick from "../../assets/themes";
+
+// Connection Card
 const ConnectionContactCard = ({
   title,
   subtitle,
@@ -92,10 +93,8 @@ const ConnectionContactCard = ({
             </Card.Content>
             <Card.Title title={title} subtitle={subtitle} />
 
-
             <Card.Actions>
-
-            <IconButton
+              <IconButton
                 theme={{ colors: { primary: "#263E20" } }}
                 size={34}
                 iconColor="#263E20"
@@ -111,8 +110,6 @@ const ConnectionContactCard = ({
                 icon={icon}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
-
-              
             </Card.Actions>
           </View>
         </Card>
