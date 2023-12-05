@@ -6,17 +6,29 @@ import { AntDesign } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { Feather } from '@expo/vector-icons';
 import { Avatar, Button, Card } from "react-native-paper";
+import imageUrl from "../"
 
 import * as React from 'react';
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 export default function useMedLog(medication) {
+
+  // Function to change the image source
+  const changeImageSrc = () => {
+    setImageSrc('new-image-src.jpg');
+  }
   // const image = medication.imageUrl;
   // const title = medication.medTitle;
   // const dose = medication.dose;
   const size = 60;
   const title = medication.name;
-  const image = Images.asprin;
+  const imageUrl = "../../assets/images/bluePill.png"
+  const imageUrl2 = "../../assets/images/" + medication.image
+  console.log("medication.image:")
+  console.log(medication.image)
+  console.log("imageUrl and imageUrl2 are the same:")
+  console.log(imageUrl == imageUrl2)
+  const image = require(imageUrl);
   const dose = medication.dose;
   const goButton = 
   <Pressable style={styles.goButton}>
@@ -31,11 +43,6 @@ export default function useMedLog(medication) {
             marginTop: 10,
           }}
         >
-          {/* <Card.Title
-            title="Aspirin"
-            subtitle="Taken at 12:00pm"
-            left={LeftContent}
-          /> */}
            <View
           style={{
             width: "full",
@@ -53,6 +60,10 @@ export default function useMedLog(medication) {
           </Card.Content>
           <Card.Title  title={title}
             subtitle={dose}/>
+          <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+          </Card.Actions>
         </View>
           
         </Card>
