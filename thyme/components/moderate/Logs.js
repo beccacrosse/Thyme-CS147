@@ -17,7 +17,7 @@ const Logs = (props) => {
   return (
     <ScrollView style={{ backgroundColor: Styles.contentBackground }}>
       <View style={styles.sectionContainer}>
-        <Text style={styles.subheaderText}>November 30, 2023</Text>
+        <Text style={styles.subheaderText}>December 7, 2023</Text>
         <Card style={{ backgroundColor: "white" }}>
           <View
             style={{
@@ -31,7 +31,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.avitan}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Antibiotic" subtitle="Taken at 8:00am" />
@@ -50,7 +50,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.d3}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00am" />
@@ -78,7 +78,7 @@ const Logs = (props) => {
           </View>
         </Card>
 
-        <Text style={styles.subheaderText}>November 29, 2023</Text>
+        <Text style={styles.subheaderText}>December 6, 2023</Text>
         <Card style={{ backgroundColor: "white" }}>
           <View
             style={{
@@ -92,7 +92,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.avitan}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Antibiotic" subtitle="Taken at 8:00am" />
@@ -113,14 +113,14 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.d3}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00am" />
           </View>
         </Card>
 
-        <Text style={styles.subheaderText}>November 28, 2023</Text>
+        <Text style={styles.subheaderText}>December 5, 2023</Text>
         <Card style={{ backgroundColor: "white" }}>
           <View
             style={{
@@ -134,7 +134,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.avitan}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Antibiotic" subtitle="Taken at 8:00am" />
@@ -153,7 +153,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.d3}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00am" />

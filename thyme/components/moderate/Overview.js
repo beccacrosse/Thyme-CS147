@@ -42,26 +42,6 @@ const Overview = (props) => {
       <View style={styles.sectionContainer}>
         <Text style={styles.subheaderText}>Current Medications</Text>
         <Card style={{ backgroundColor: "white" }}>
-          {/* <Card.Title
-            title="Adderall"
-            subtitle="Schedule: Daily as evening"
-            left={LeftContent}
-          />
-          <Card.Title
-            title="Aspirin"
-            subtitle="Schedule: As needed"
-            left={LeftContent}
-          />
-          <Card.Title
-            title="Ativan"
-            subtitle="Schedule: Daily - Morning"
-            left={LeftContent}
-          />
-          <Card.Title
-            title="Vitamin D3"
-            subtitle="Schedule: Daily - Morning"
-            left={LeftContent}
-          /> */}
           <View
             style={{
               width: "full",
@@ -74,7 +54,7 @@ const Overview = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.asprin}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title
@@ -95,7 +75,7 @@ const Overview = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.adderall}
+                source={Images.bluePill}
               />
             </Card.Content>
             <Card.Title
