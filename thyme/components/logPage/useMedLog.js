@@ -5,7 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { Feather } from '@expo/vector-icons';
-import { Avatar, Button, Card } from "react-native-paper";
+import { Avatar, Button, Card, IconButton, } from "react-native-paper";
 import imageUrl from "../"
 
 import * as React from 'react';
@@ -13,27 +13,15 @@ import * as React from 'react';
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 export default function useMedLog(medication) {
 
-  // Function to change the image source
-  const changeImageSrc = () => {
-    setImageSrc('new-image-src.jpg');
-  }
-  // const image = medication.imageUrl;
-  // const title = medication.medTitle;
-  // const dose = medication.dose;
-  const size = 60;
+  const avatarSize = 60;
   const title = medication.name;
-  const imageUrl = "../../assets/images/bluePill.png"
-  const imageUrl2 = "../../assets/images/" + medication.image
-  console.log("medication.image:")
-  console.log(medication.image)
-  console.log("imageUrl and imageUrl2 are the same:")
-  console.log(imageUrl == imageUrl2)
-  const image = require(imageUrl);
+  const image = medication.image
   const dose = medication.dose;
   const goButton = 
   <Pressable style={styles.goButton}>
     <Feather name="arrow-right" size={45} color={"black"} />
   </Pressable>
+  const buttonIcon = <Button />
   
   return(
     <Card
@@ -55,15 +43,21 @@ export default function useMedLog(medication) {
           <Card.Content>
             <Image style={[
             styles.icon,
-            { width: size, height: size },
+            { width: avatarSize, height: avatarSize },
           ]} source={image} />
           </Card.Content>
           <Card.Title  title={title}
             subtitle={dose}/>
-          <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-          </Card.Actions>
+          {/* <Card.Actions>
+              <IconButton
+                theme={{ colors: { primary: "#263E20" } }}
+                size={34}
+                iconColor="#263E20"
+                mode="outlined"
+                icon={icon}
+                onPress={() => handleVisibility(!modalVisible)}
+              ></IconButton>
+            </Card.Actions> */}
         </View>
           
         </Card>

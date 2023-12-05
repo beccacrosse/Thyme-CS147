@@ -42,4 +42,15 @@ const Styles = StyleSheet.create({
   contentBackground: "#F0F6E6",
 });
 
-export { Icons, Images, Styles };
+const UserMedications = {
+  medications: [
+    { time: "08:00", 
+    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin },{ name: "Birth control", dose: "one per day", image: Images.avitan }, ] },
+    { time: "10:00", 
+    medications: [{ name: "Adderall", dose: "once per day", image: Images.adderall }, { name: "Vitamins", dose: "once per", image: Images.d3 }] },
+    { time: "20:00", 
+    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin  }] }
+    ]
+};
+
+export { Icons, Images, Styles, UserMedications };

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList, Dimensions, StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Styles, Images } from '../../assets/themes';
+import { Styles, Images, UserMedications } from '../../assets/themes';
 import { LinearGradient } from 'expo-linear-gradient';
 import useMedLog from '../../components/logPage/useMedLog';
 import useMedInfo from '../../components/logPage/useMedInfo';
@@ -15,10 +15,7 @@ const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 export default function Log() {
   date = "Thu, 2 November";
-  medications = [{ time: "08:00", medications: [{ name: "Antibiotics", dose: "twice per day", image: "bluePill.png" }] },
-  { time: "10:00", medications: [{ name: "Birth control", dose: "one per day", image: "bluePill.png" }, { name: "Vitamins", dose: "once per", image: "YellowPill.png" }] },
-  { time: "20:00", medications: [{ name: "Antibiotics", dose: "twice per day", image: "RedPill.png" }, { name: "Drink Booster", dose: "once per day", image: "bluePill.png" }] }]
-  pill = useMedLog(medications[0].medications[0])
+
   return (
 
     <LinearGradient
@@ -44,12 +41,11 @@ export default function Log() {
           </View>
 
           <Text style={{ fontSize: 38, marginBottom: 20 }}>Today's Plan</Text>
-          {/* <FlatList
-          data={medications}
+          <FlatList
+          data={UserMedications.medications}
           renderItem={({item}) => useLogSection(item)}
           keyExtractor={item => item}
-        /> */}
-          {pill}
+        />
         </View>
 
         {/* <logSection /> */}
