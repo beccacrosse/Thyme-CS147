@@ -20,6 +20,7 @@ import MainButton from "../shared/MainButton";
 import { Overlay } from "react-native-elements";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { getData, setData } from "../../asyncStorage.js";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
@@ -31,6 +32,7 @@ const MedicationCheckIn = (props) => {
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [isTextEditable, setTextEditable] = useState(true);
   const [buttonText, setButtonText] = useState("Submit Log");
+  //onst [taken, setTaken] = useState(false);
 
   const medicationIcon = props.medicationIcon;
   const medicationName = props.medicationName;
@@ -43,6 +45,7 @@ const MedicationCheckIn = (props) => {
   const pillFrequency = props.pillFrequency;
   const time = props.time;
   const date = props.date;
+  let taken = false;
 
   // Toggles the Log Information Overlay
   const toggleOverlay = () => {
@@ -60,6 +63,20 @@ const MedicationCheckIn = (props) => {
     setButtonText("Log Complete");
     setButtonDisabled(!isButtonDisabled);
     setTextEditable(!isTextEditable);
+
+    const key = medicationName + "-" + "December 8, 2023" + "-" + time;
+    taken = true;
+    const storageValue = [
+      medicationName,
+      "December 8, 2023",
+      time,
+      medicationIcon,
+      taken,
+    ];
+    (async () => {
+      await setData(key, JSON.stringify(storageValue));
+    })();
+    //setData(key, JSON.stringify(storageValue));
   };
 
   const onEdit = () => {
