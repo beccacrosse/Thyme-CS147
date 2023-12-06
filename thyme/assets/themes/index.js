@@ -49,7 +49,7 @@ const UserMedications = {
     { time: "10:00", 
     medications: [{ name: "Adderall", dose: "once per day", image: Images.adderall }, { name: "Vitamins", dose: "once per", image: Images.d3 }] },
     { time: "20:00", 
-    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin  }] }
+    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin  }, { name: "Melatonin", dose: "once per day", image: Images.avitan  }] }
     ]
 };
 

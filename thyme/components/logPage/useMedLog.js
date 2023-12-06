@@ -1,14 +1,11 @@
 
-import { ScrollView, Dimensions, Image, StyleSheet, SafeAreaView, Text, Pressable, View } from "react-native";
-import { Images, Styles } from "../../assets/themes";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { AntDesign } from '@expo/vector-icons';
-import { Link } from "expo-router";
+import { ScrollView, Dimensions, Image, StyleSheet, Text, Pressable, View } from "react-native";
+import { Images, Styles, Icons } from "../../assets/themes";
+import React, { useState } from "react";
 import { Feather } from '@expo/vector-icons';
 import { Avatar, Button, Card, IconButton, } from "react-native-paper";
-import imageUrl from "../"
+import MedicationCheckIn from '../simple/MedicationCheckIn';
 
-import * as React from 'react';
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 export default function useMedLog(medication) {
@@ -17,13 +14,31 @@ export default function useMedLog(medication) {
   const title = medication.name;
   const image = medication.image
   const dose = medication.dose;
+  const medicationDescription="TBD"
+  const daysDone= 1
+  const pillNumber =1
   const goButton = 
   <Pressable style={styles.goButton}>
     <Feather name="arrow-right" size={45} color={"black"} />
   </Pressable>
-  const buttonIcon = <Button />
+  
+
+
+  //const [modalVisible, setModalVisible] = useState(false);
+
   
   return(
+    // <View style={{ marginBottom: 10 }}>
+    //     <MedicationCheckIn
+    //       medicationIcon={image}
+    //       medicationName={title}
+    //       medicationDescription="TBD"
+    //       daysDone="1"
+    //       pillFrequency={dose}
+    //       time={"TBD"}
+    //       date={"DATE TBD"}
+    //       isVisible={modalVisible}
+    //     />
     <Card
           style={{
             backgroundColor: "white",
@@ -48,21 +63,11 @@ export default function useMedLog(medication) {
           </Card.Content>
           <Card.Title  title={title}
             subtitle={dose}/>
-          {/* <Card.Actions>
-              <IconButton
-                theme={{ colors: { primary: "#263E20" } }}
-                size={34}
-                iconColor="#263E20"
-                mode="outlined"
-                icon={icon}
-                onPress={() => handleVisibility(!modalVisible)}
-              ></IconButton>
-            </Card.Actions> */}
+          <Card.Actions>
+              {goButton}
+          </Card.Actions>
         </View>
-          
         </Card>
-  
-  
   )
 }
 

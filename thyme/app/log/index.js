@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, Dimensions, StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { FlatList, Dimensions, StyleSheet,SafeAreaView, Text, View, Image, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Styles, Images, UserMedications } from '../../assets/themes';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -25,7 +25,7 @@ export default function Log() {
       start={{ x: 0.6, y: 0.4 }}
     >
       <ScrollView>
-
+      <SafeAreaView>
         <View style={{ width: windowWidth * .95 }}>
           <View>
             <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 25 }}>
@@ -47,6 +47,7 @@ export default function Log() {
           keyExtractor={item => item}
         />
         </View>
+        </SafeAreaView>
 
         {/* <logSection /> */}
       </ScrollView>

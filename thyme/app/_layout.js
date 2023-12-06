@@ -33,7 +33,7 @@ export default function HomeLayout() {
         }}
       />
     <Tabs.Screen
-        name="log"
+        name="log/index"
         options={{
           tabBarLabel: "Log",
           tabBarIcon: ({ size, color }) => (

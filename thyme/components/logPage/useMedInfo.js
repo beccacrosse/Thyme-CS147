@@ -1,10 +1,9 @@
 import { Dimensions, Image, Button, StyleSheet, SafeAreaView, Text, Pressable, View } from "react-native";
 import { Icons, Styles } from "../../assets/themes";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { AntDesign } from '@expo/vector-icons';
-import { Link } from "expo-router";
-import { Feather } from '@expo/vector-icons';
-import PopUpMedication from '../shared/PopUpMedication'
+
+import PopUpMedication from '../shared/PopUpMedication';
+import MedicationCheckIn from '../simple/MedicationCheckIn';
+
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 export default function useMedLog() {
