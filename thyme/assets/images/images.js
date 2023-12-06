@@ -9,6 +9,7 @@ const images = {
   bluePill: require("./bluePill.png"),
   adderall: require("./RedPill.png"),
   d3: require("./YellowPillSmaller.png"),
+  //greenTick : require("./greenTick.jpeg")
 };
 
 export default images;

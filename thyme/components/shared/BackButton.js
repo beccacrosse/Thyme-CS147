@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import {Button} from "react-native-paper";
 
 // Back Button
 const BackButton = (props) => {
@@ -8,11 +9,12 @@ const BackButton = (props) => {
 
   return (
     <View>
-      <Pressable style={[styles.button, styles.buttonDefault]} onPress={action}>
-        <View style={styles.iconStyle}>
-          <Ionicons name="arrow-back-sharp" size={30} color="#8D9979" />
+      <Button mode= "default" onPress={action} width = {100}>
+        <View style={{display: "flex", displayDirection: "row"}} >
+          <Ionicons name="arrow-back-sharp" size={60} color="#8D9979" />
+          {/* <Text>Connections</Text> */}
         </View>
-      </Pressable>
+      </Button>
     </View>
   );
 };

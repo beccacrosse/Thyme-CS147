@@ -120,8 +120,8 @@ const ReportModal = (props) => {
               style={{ alignSelf: "flex-start" }}
               buttonAction={() => props.visibilityFunction()}
             />
-            <View style={styles.profile}>
-              <Profile profileImage={Images.anna} profileSize={140} />
+            <View style={{...styles.profile, top: -20}}>
+              <Profile profileImage={Images.anna} profileSize={160} />
             </View>
           </View>
           <ReportTabs />

@@ -23,15 +23,18 @@ export default function ReportPage() {
   return (
     <SafeAreaView style={{ height: windowHeight }}>
       <View>
-        <BackButton style={{ alignSelf: "flex-start" }} />
-        <View style={styles.profile}>
+        <View style = {{left: -1}}>
+          <BackButton />
+        </View>
+        
+        <View style={{...styles.profile, marginBottom: 10}}>
           <Profile profileImage={Images.anna} profileSize={140} />
         </View>
       </View>
       <ReportTabs />
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
-          <MainButton buttonText="Save PDF" buttonAction={() => {}} />
+          <MainButton buttonText="Save PDF!" buttonAction={() => {}} />
         </View>
         <View style={styles.button}>
           <MainButton buttonText="Share" buttonAction={() => {}} />

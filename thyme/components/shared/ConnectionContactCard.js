@@ -10,7 +10,8 @@ import {
 import Profile from "../shared/Profile";
 import ReportModal from "../moderate/ReportModal";
 import ReminderModal from "../moderate/ReminderModal";
-import greenTick from "../../assets/themes";
+import icons from "../../assets/icons/icons"
+
 
 // Connection Card
 const ConnectionContactCard = ({
@@ -21,6 +22,7 @@ const ConnectionContactCard = ({
   icon,
 }) => {
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
+  
   const [modalVisible, setModalVisible] = useState(false);
 
   function handleVisibility() {
@@ -95,21 +97,21 @@ const ConnectionContactCard = ({
 
             <Card.Actions>
               <IconButton
-                theme={{ colors: { primary: "#263E20" } }}
+                theme={{ colors: { primary: "#263E20" }}}
                 size={34}
                 iconColor="#263E20"
-                mode="default"
-                icon={greenTick}
+                mode="outlined"
+                icon={icons.greenTick}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
-              <IconButton
+              {/* <IconButton
                 theme={{ colors: { primary: "#263E20" } }}
                 size={34}
                 iconColor="#263E20"
                 mode="outlined"
                 icon={icon}
                 onPress={() => handleVisibility(!modalVisible)}
-              ></IconButton>
+              ></IconButton> */}
             </Card.Actions>
           </View>
         </Card>
