@@ -121,7 +121,7 @@ export default function Connections() {
         :
           null}
         
-        <View style = {{marginTop: 40}}>
+        <View style = {{marginTop: 20}}>
         <Button theme={{ colors: { primary: '#263E20' } }} mode = "outlined" icon = {Icons.addUser} size = {38} onPress={()=>setNewUserModalVisible(true)}>
           Add new Connection
         </Button>
