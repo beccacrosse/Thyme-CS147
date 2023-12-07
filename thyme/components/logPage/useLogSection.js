@@ -1,6 +1,6 @@
 import { FlatList, ScrollView, Dimensions, Image, StyleSheet, SafeAreaView, Text, Pressable, View } from "react-native";
 import { Images, Styles } from "../../assets/themes";
-import useMedLog from "./useMedLog";
+import MedLog from "./MedLog";
 
 export default function useLogSection(medicationsSection) {
   console.log("one medication section info")
@@ -15,7 +15,9 @@ export default function useLogSection(medicationsSection) {
       <Text>{time}</Text>
       <FlatList
           data={medications}
-          renderItem={({item}) => useMedLog(item)}
+          renderItem={({item}) => (
+            <MedLog medication={item} />
+          )}
           keyExtractor={item => item}
         />
     </View>

@@ -46,12 +46,19 @@ const MedicationCheckIn = (props) => {
   const pillDose = props.pillDose;
   const time = props.time;
   const date = props.date;
+  const visibilityFunction = props.visibilityFunction
+  const completedColorFunction = props.completedColorFunction
   let taken = false;
 
   // Toggles the Log Information Overlay
   const toggleOverlay = () => {
     setVisible(!visible);
   };
+
+  const completeCheckin = () => {
+    setVisible(!visible);
+    completedColorFunction();
+  }
 
   // Toggles the Information Overlay
   const toggleInfoOverlay = () => {
@@ -64,6 +71,7 @@ const MedicationCheckIn = (props) => {
     setButtonText("Log Complete");
     setButtonDisabled(!isButtonDisabled);
     setTextEditable(!isTextEditable);
+    completedColorFunction();
 
     const key = medicationName + "-" + "December 8, 2023" + "-" + time;
     taken = true;
@@ -155,7 +163,7 @@ const MedicationCheckIn = (props) => {
       </Overlay>
       <View style={styles.headerContainer}>
         <View>
-          <BackButton />
+          <BackButton buttonAction={() => props.visibilityFunction()} />
           <Text style={styles.dateText}>{date}</Text>
         </View>
         <View style={styles.profileContainer}>
