@@ -8,6 +8,7 @@ import { Images } from "../../assets/themes";
 import {Icons} from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
 import { Searchbar,Divider,Button} from "react-native-paper";
+import AddNewModal from "../../components/moderate/AddNewModal";
 
 import {
   useFonts,
@@ -95,6 +96,8 @@ export default function Connections() {
         <Button theme={{ colors: { primary: '#263E20' } }} mode = "outlined" icon = {Icons.addUser} size = {38}>
           Add new Connection
         </Button>
+
+        <AddNewModal/>
         </View>
 
        
