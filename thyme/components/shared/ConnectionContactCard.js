@@ -10,7 +10,8 @@ import {
 import Profile from "../shared/Profile";
 import ReportModal from "../moderate/ReportModal";
 import ReminderModal from "../moderate/ReminderModal";
-import icons from "../../assets/icons/icons"
+import icons from "../../assets/icons/icons";
+import Styles from "../../assets/themes"
 
 
 // Connection Card

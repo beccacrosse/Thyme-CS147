@@ -9,31 +9,38 @@ import {
   View,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Images, Styles, Icons } from "../../assets/themes";
+import { Images, Styles, Icons } from "../../assets/themes/index.js";
 import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import { Avatar, Button, Card, IconButton } from "react-native-paper";
-import MedicationCheckIn from "../simple/MedicationCheckIn";
+import MedicationCheckIn from "../simple/MedicationCheckIn.js";
 import { getData, setData } from "../../asyncStorage.js";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
-export default function useMedLog(medication) {
+const MedLog = ({medication}) => {
   const avatarSize = 50;
+  const date = "Thu, 2 November";
+  const time = medication.time;
   const title = medication.name;
   const image = medication.image;
   const dose = medication.dose;
-  const medicationDescription = "TBD";
+  const medicationDescription = "Individualized information about each medication coming soon :)";
   const daysDone = 1;
   const pillNumber = 1;
-  let isVisible = true;
+  const buttonDisabled = (title!="Adderall")? false: true;
+  const defaultColor = (title!="Adderall")? "white": Styles.grayedOut
+  const secondaryColor = (title!="Adderall")? "black": Styles.grayedOutButton
+  const secondaryTextColor = (title!="Adderall")? "black": Styles.grayedOutText
+  
+  //const RightContent = (props) => <Card.Actions>{goButton}</Card.Actions>;
 
   const goButton = (
-    <Pressable style={styles.goButton} onPress={() => handleVisibility(!modalVisible)}>
-      <Feather name="arrow-right" size={45} color={"black"} />
+    <Pressable disabled={buttonDisabled} style={styles.goButton} onPress={() => setModalVisible(!modalVisible)}>
+      <Feather name="arrow-right" size={45} color={secondaryColor} />
     </Pressable>
   );
-
+  
   const LeftContent = (props) => (
     <Image
       style={[styles.icon, { width: avatarSize, height: avatarSize }]}
@@ -41,23 +48,25 @@ export default function useMedLog(medication) {
     />
   );
 
-  const RightContent = (props) => <Card.Actions>{goButton}</Card.Actions>;
 
-  // const [modalVisible, setModalVisible] = useState(false);
-  // function handleVisibility() {
-  //   setModalVisible(!modalVisible);
-  // }
+  const [modalVisible, setModalVisible] = React.useState(false);
+  function handleVisibility() {
+    setModalVisible(!modalVisible);
+  }
+
+  const [backgroundColor, setBackgroundColor] = useState(defaultColor)
+  function handleBackgroundColor() {
+    console.log('handleBackgroundColor has been called!')
+    setBackgroundColor(Styles.completedColor);
+    console.log('')
+  }
 
   return (
     <View style={{ marginBottom: 10 }}>
       <Modal
       animationType="slide"
       transparent={false}
-      visible={false}
-      // onRequestClose={() => {
-      //   Alert.alert("Modal has been closed.");
-      //   setModalVisible(!modalVisible);
-      // }}
+      visible={modalVisible}
     >
       <LinearGradient
         // Background Linear Gradient
@@ -72,27 +81,42 @@ export default function useMedLog(medication) {
           daysDone={daysDone}
           pillNumber={pillNumber}
           pillDose={dose}
-          time={"TBD"}
-          date={"DATE TBD"}
-          // visibilityFunction={handleVisibility}
-          isVisible={false}
+          time={time}
+          date={date}
+          visibilityFunction={handleVisibility}
+          completedColorFunction={handleBackgroundColor}
+          isVisible={modalVisible}
         />
         </LinearGradient>
     </Modal>
         
     <Card
       style={{
-        backgroundColor: "white",
+        backgroundColor: backgroundColor,
         marginBottom: 10,
         marginTop: 10,
       }}
     >
-      <Card.Title
+      <View
+            style={{
+              width: windowWidth * .75,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          > 
+      
+      <Card.Title titleStyle={{color: secondaryTextColor}} subtitleStyle={{color: secondaryTextColor}}
         title={title}
         subtitle={dose}
         left={LeftContent}
-        right={RightContent}
+        //right={RightContent}
       />
+      <Card.Actions>
+              {goButton}
+        </Card.Actions>
+        </View>
     </Card>
     </View>
   );
@@ -140,3 +164,5 @@ const styles = {
     // borderColor: "blue",
   },
 };
+
+export default MedLog;

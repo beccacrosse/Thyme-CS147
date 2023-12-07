@@ -3,10 +3,8 @@ import { FlatList, Dimensions, StyleSheet,SafeAreaView, Text, View, Image, Scrol
 import { StatusBar } from "expo-status-bar";
 import { Styles, Images, UserMedications } from '../../assets/themes';
 import { LinearGradient } from 'expo-linear-gradient';
-import useMedLog from '../../components/logPage/useMedLog';
-import useMedInfo from '../../components/logPage/useMedInfo';
+import MedLog from '../../components/logPage/MedLog';
 import useLogSection from '../../components/logPage/useLogSection';
-import BackButton from '../../components/shared/BackButton';
 import Profile from "../../components/shared/Profile";
 
 import { useNavigation } from "@react-navigation/native";

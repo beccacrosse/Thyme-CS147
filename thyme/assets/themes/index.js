@@ -40,16 +40,19 @@ const Styles = StyleSheet.create({
   //inputFieldColor: "#F0F6E6", //Panache
   inputFieldColor: "#263E20", //Panache
   contentBackground: "#F0F6E6",
+  grayedOut: "#EDEDED",
+  grayedOutText: "#B5B5B5",
+  grayedOutButton: "#D0D0D0",
 });
 
 const UserMedications = {
   medications: [
     { time: "08:00", 
-    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin },{ name: "Birth control", dose: "Take 1 pill once per day", image: Images.avitan }, ] },
+    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin, time: "08:00" },{ name: "Birth control", dose: "Take 1 pill once per day", image: Images.avitan ,time: "08:00"}, ] },
     { time: "10:00", 
-    medications: [{ name: "Adderall", dose: "Take 1 pill once per day", image: Images.adderall }, { name: "Vitamins", dose: "Take 2 pills once per day", image: Images.d3 }] },
+    medications: [{ name: "Adderall", dose: "Take 1 pill, on Mondays", image: Images.adderall, time: "10:00"  }, { name: "Vitamins", dose: "Take 2 pills once per day", image: Images.d3, time: "10:00" }] },
     { time: "20:00", 
-    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin  }, { name: "Melatonin", dose: "Take 1 pill once per day", image: Images.avitan  }] }
+    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin, time: "20:00"  }, { name: "Melatonin", dose: "Take 1 pill once per day", image: Images.avitan, time: "20:00"  }] }
     ]
 };
 

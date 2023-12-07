@@ -12,7 +12,7 @@ const AddNewModal = (props) => {
   return (
     <SafeAreaView>
       <View>
-        <Overlay isVisible={true}>
+        <Overlay isVisible={false}>
           <View
             style={{
               display: "flex",
