@@ -80,6 +80,7 @@ const ConnectionContactCard = ({
           visible={modalVisible}
           content={content}
           visibilityFunction={handleVisibility}
+          name = {title}
         />
         <Card>
           <View

@@ -12,7 +12,7 @@ import { Button } from "../shared/MainButton";
 import MainButton from "../shared/MainButton";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
-const ReminderModal = ({ visible, content, visibilityFunction }) => {
+const ReminderModal = ({ visible, content, visibilityFunction,name }) => {
   const [secondModalVisible, setSecondModalVisible] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const ReminderModal = ({ visible, content, visibilityFunction }) => {
         <Overlay isVisible = {secondModalVisible} onBackdropPress={() => setSecondModalVisible(false)}>
           <View style={styles2.modalView2}>
             <Text style={styles2.modalTitleText2}>
-              A reminder has been sent to Dia today!
+              A reminder has been sent to {name} today!
             </Text>
             <MainButton
               buttonText="Okay"
