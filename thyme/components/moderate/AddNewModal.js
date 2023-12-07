@@ -5,14 +5,20 @@ import { Overlay } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import { Button } from "react-native-paper";
 
-const AddNewModal = (props) => {
+const AddNewModal = ({newUserModalVisible, handleNewUserModalVisible, handleNewUserAdded}) => {
+
   const [nameText, onNameChangeText] = React.useState("");
   const [relationText, onRelationChangeText] = React.useState("");
   const [number, onChangeNumber] = React.useState("");
+
+  function onSubmiteClicked() {
+    handleNewUserAdded(true);
+    
+  }
   return (
     <SafeAreaView>
       <View>
-        <Overlay isVisible={false}>
+        <Overlay isVisible={newUserModalVisible}>
           <View
             style={{
               display: "flex",
@@ -24,7 +30,7 @@ const AddNewModal = (props) => {
             <IconButton
               icon="camera"
               mode="outlined"
-              size={80}
+              size={90}
               
               onPress={() => console.log("Pressed")}
             />
@@ -41,6 +47,7 @@ const AddNewModal = (props) => {
                 style={{ ...styles.input,borderColor: "#263E20" }}
                 onChangeText={onNameChangeText}
                 value={nameText}
+                placeholder=""
               />
               <Text style={{ paddingLeft: 10,  color: "#263E20"  }}>Relation</Text>
               <TextInput
@@ -49,13 +56,24 @@ const AddNewModal = (props) => {
                 value={relationText}
                 placeholder=""
               />
-              <View style = {{width : "full", padding : 10}}>
+              <View style = {{display : "flex", flexDirection : "row", padding : 10,  alignContent: 'space-between'}}>
               <Button
                 theme={{colors: {primary: "#263E20" }}}
                 mode="outlined"
                 size={38}
+                style = {{margin: 10}}
+                onPress = {() => {handleNewUserModalVisible(false)}}
               >
-                Add new Connection
+                Cancel
+              </Button>
+              <Button
+                theme={{colors: {primary: "#263E20" }}}
+                mode="contained"
+                size={38}
+                style = {{margin: 10}}
+                onPress = {() => {handleNewUserAdded(true)}}
+              >
+                Submit
               </Button>
               </View>
             </View>
