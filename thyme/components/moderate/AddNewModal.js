@@ -5,7 +5,7 @@ import { Overlay } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import { Button } from "react-native-paper";
 
-const AddNewModal = ({newUserModalVisible, handleNewUserModalVisible, handleNewUserAdded}) => {
+const AddNewModal = ({newUserModalVisible, handleNewUserModalVisible, handleNewUserAdded,handleNewUserRelation,handleNewUserName}) => {
 
   const [nameText, onNameChangeText] = React.useState("");
   const [relationText, onRelationChangeText] = React.useState("");
@@ -13,7 +13,8 @@ const AddNewModal = ({newUserModalVisible, handleNewUserModalVisible, handleNewU
 
   function onSubmiteClicked() {
     handleNewUserAdded(true);
-    
+    handleNewUserName(nameText);
+    handleNewUserRelation(relationText);
   }
   return (
     <SafeAreaView>
@@ -71,7 +72,7 @@ const AddNewModal = ({newUserModalVisible, handleNewUserModalVisible, handleNewU
                 mode="contained"
                 size={38}
                 style = {{margin: 10}}
-                onPress = {() => {handleNewUserAdded(true)}}
+                onPress = {() => {onSubmiteClicked()}}
               >
                 Submit
               </Button>

@@ -16,14 +16,25 @@ import {
   AlegreyaSans_400Regular,
 } from "@expo-google-fonts/alegreya-sans";
 import ConnectionContactCard  from "../../components/shared/ConnectionContactCard"
+import DefaultConnectionContactCard from "../../components/shared/DefaultConnectionContactCard";
 
 export default function Connections() {
   let [fontsLoaded] = useFonts({
     AlegreyaSans_400Regular,
   });
 
+  const [newUserName, setNewUserName] = React.useState("");
+  const [newUserRelation, setNewUserRelation] = React.useState("");
   const [newUserModalVisible, setNewUserModalVisible] = React.useState(false);
   const [newUserAdded, setNewUserAdded] = React.useState(false);
+
+  function handleNewUserName (newUserName) {
+    setNewUserName(newUserName);
+  }
+
+  function handleNewUserRelation (newUserRelation) {
+    setNewUserRelation(newUserRelation);
+  }
 
   function handleNewUserModalVisible (userModalVisibleFromChildren) {
     setNewUserModalVisible(userModalVisibleFromChildren);
@@ -105,7 +116,7 @@ export default function Connections() {
         <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
         {newUserAdded === true? 
-          <ConnectionContactCard profileImage={<Ionicons name="person-outline" size={24} color="black" />} title = "Hunter11" subtitle= "Relative11" profileSize={60} icon = {Icons.alarm}/>
+          <DefaultConnectionContactCard title = {newUserName} subtitle= {newUserRelation} profileSize={60} icon = {Icons.alarm}/>
         :
           null}
         
@@ -117,7 +128,7 @@ export default function Connections() {
         {newUserAdded === true? 
           null
         :
-        <AddNewModal newUserModalVisible = {newUserModalVisible} 
+        <AddNewModal newUserModalVisible = {newUserModalVisible} handleNewUserRelation = {handleNewUserRelation} handleNewUserName = {handleNewUserName}
         handleNewUserModalVisible = {handleNewUserModalVisible} 
         handleNewUserAdded = {handleNewUserAdded}/>}
 
