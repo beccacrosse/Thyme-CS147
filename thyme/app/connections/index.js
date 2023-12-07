@@ -9,6 +9,7 @@ import {Icons} from "../../assets/themes";
 import Profile from "../../components/shared/Profile";
 import { Searchbar,Divider,Button} from "react-native-paper";
 import AddNewModal from "../../components/moderate/AddNewModal";
+import { Ionicons } from '@expo/vector-icons';
 
 import {
   useFonts,
@@ -21,6 +22,16 @@ export default function Connections() {
     AlegreyaSans_400Regular,
   });
 
+  const [newUserModalVisible, setNewUserModalVisible] = React.useState(false);
+  const [newUserAdded, setNewUserAdded] = React.useState(false);
+
+  function handleNewUserModalVisible (userModalVisibleFromChildren) {
+    setNewUserModalVisible(userModalVisibleFromChildren);
+  }
+
+  function handleNewUserAdded (){
+    setNewUserAdded(true);
+  }
   const [searchQuery, setSearchQuery] = React.useState("");
 
   const onChangeSearch = (query) => setSearchQuery(query);
@@ -28,6 +39,8 @@ export default function Connections() {
   if (!fontsLoaded) {
     return <Text>font not loaded</Text>;
   }
+
+ 
 
   return (
     <LinearGradient
@@ -91,13 +104,26 @@ export default function Connections() {
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60} icon = {Icons.report}/>
         <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
+        {newUserAdded === true? 
+          <ConnectionContactCard profileImage={<Ionicons name="person-outline" size={24} color="black" />} title = "Hunter11" subtitle= "Relative11" profileSize={60} icon = {Icons.alarm}/>
+        :
+          null}
         
         <View style = {{marginTop: 40}}>
-        <Button theme={{ colors: { primary: '#263E20' } }} mode = "outlined" icon = {Icons.addUser} size = {38}>
+        <Button theme={{ colors: { primary: '#263E20' } }} mode = "outlined" icon = {Icons.addUser} size = {38} onPress={()=>setNewUserModalVisible(true)}>
           Add new Connection
         </Button>
 
-        <AddNewModal/>
+        {newUserAdded === true? 
+          null
+        :
+        <AddNewModal newUserModalVisible = {newUserModalVisible} 
+        handleNewUserModalVisible = {handleNewUserModalVisible} 
+        handleNewUserAdded = {handleNewUserAdded}/>}
+
+        
+          
+        
         </View>
 
        
