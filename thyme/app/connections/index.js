@@ -63,7 +63,7 @@ export default function Connections() {
       <ScrollView>
       <View style={{ display: "flex", flexDirection: "column", top: 150 }}>
 
-        <View style = {{top : -100}}>
+        <View style = {{top : -100, }}>
           <Text
             variant="displayLarge"
             style={{
@@ -91,9 +91,9 @@ export default function Connections() {
         
        
 
-        <View style={{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "space-evenly"}}>
+        <View style={{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}}>
           
-          <Profile profileImage={Images.anna} profileSize={140} />
+          <Profile profileImage={Images.anna} profileSize={100} />
           <Text
             variant="displayLarge"
             style={{
@@ -101,6 +101,7 @@ export default function Connections() {
               fontSize: 30,
               color: "#263E20",
               fontWeight: "bold",
+              left: 30
             }}
           >
             Anna Gao
