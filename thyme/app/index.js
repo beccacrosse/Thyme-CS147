@@ -8,11 +8,80 @@ import { Styles } from "../assets/themes";
 import { ProgressBar } from "react-native-paper";
 import forestImage from "../assets/icons/forest.png";
 import { Icons } from "../assets/themes";
+import { getAllData, setData, clearData } from "../asyncStorage.js";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 export default function App() {
   const [user, setUser] = useState("Anna");
+
+  // Update Storage with Default Keys
+  useEffect(() => {
+    (async () => {
+      await clearData();
+
+      const key1 = "Antibiotics-December 8, 2023-8:00am";
+      const value1 = [
+        "Antibiotics",
+        "December 8, 2023",
+        "8:00am",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key1, JSON.stringify(value1));
+
+      const key2 = "Birth control-December 8, 2023-8:00am";
+      const value2 = [
+        "Birth control",
+        "December 8, 2023",
+        "8:00am",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key2, JSON.stringify(value2));
+
+      const key3 = "Adderall-December 8, 2023-10:00am";
+      const value3 = [
+        "Adderall",
+        "December 8, 2023",
+        "10:00am",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key3, JSON.stringify(value3));
+
+      const key4 = "Vitamins-December 8, 2023-10:00am";
+      const value4 = [
+        "Vitamins",
+        "December 8, 2023",
+        "10:00am",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key4, JSON.stringify(value4));
+
+      const key5 = "Antibiotics-December 8, 2023-20:00pm";
+      const value5 = [
+        "Antibiotics",
+        "December 8, 2023",
+        "20:00pm",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key5, JSON.stringify(value5));
+
+      const key6 = "Melatonin-December 8, 2023-20:00pm";
+      const value6 = [
+        "Melatonin",
+        "December 8, 2023",
+        "20:00pm",
+        "TEMP_ICON",
+        false,
+      ];
+      await setData(key6, JSON.stringify(value6));
+    })();
+  }, []);
+
   return (
     <LinearGradient
       // Background Linear Gradient
