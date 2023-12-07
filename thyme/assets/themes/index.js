@@ -45,11 +45,11 @@ const Styles = StyleSheet.create({
 const UserMedications = {
   medications: [
     { time: "08:00", 
-    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin },{ name: "Birth control", dose: "one per day", image: Images.avitan }, ] },
+    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin },{ name: "Birth control", dose: "Take 1 pill once per day", image: Images.avitan }, ] },
     { time: "10:00", 
-    medications: [{ name: "Adderall", dose: "once per day", image: Images.adderall }, { name: "Vitamins", dose: "once per", image: Images.d3 }] },
+    medications: [{ name: "Adderall", dose: "Take 1 pill once per day", image: Images.adderall }, { name: "Vitamins", dose: "Take 2 pills once per day", image: Images.d3 }] },
     { time: "20:00", 
-    medications: [{ name: "Antibiotics", dose: "twice per day", image: Images.asprin  }, { name: "Melatonin", dose: "once per day", image: Images.avitan  }] }
+    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin  }, { name: "Melatonin", dose: "Take 1 pill once per day", image: Images.avitan  }] }
     ]
 };
 

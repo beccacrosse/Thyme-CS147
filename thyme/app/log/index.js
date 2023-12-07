@@ -26,12 +26,12 @@ export default function Log() {
     >
       <ScrollView>
       <SafeAreaView>
-        <View style={{ width: windowWidth * .95 }}>
+        <View style={{ width: windowWidth * .93 }}>
           <View>
-            <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 25 }}>
-              <View style={{ flexDirection: "column" }}>
-                <BackButton style={{ alignSelf: "flex-start" }} />
-                <Text style={{ fontSize: 20, marginTop: 10 }}>{date}</Text>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 15 }}>
+              <View style={{ flexDirection: "column", alignItems:"center" }}>
+                {/* <BackButton style={{ alignSelf: "flex-start", width: 90}} /> */}
+                <Text style={{ fontSize: 25, marginTop: 60 }}>{date}</Text>
               </View>
               <View style={Styles.profile}>
                 <Profile profileImage={Images.anna} profileSize={90} />

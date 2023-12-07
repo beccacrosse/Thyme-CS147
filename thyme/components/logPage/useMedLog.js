@@ -2,11 +2,13 @@ import {
   ScrollView,
   Dimensions,
   Image,
+  Modal,
   StyleSheet,
   Text,
   Pressable,
   View,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { Images, Styles, Icons } from "../../assets/themes";
 import React, { useState } from "react";
 import { Feather } from "@expo/vector-icons";
@@ -24,9 +26,10 @@ export default function useMedLog(medication) {
   const medicationDescription = "TBD";
   const daysDone = 1;
   const pillNumber = 1;
+  let isVisible = true;
 
   const goButton = (
-    <Pressable style={styles.goButton} onPress={() => {}}>
+    <Pressable style={styles.goButton} onPress={() => handleVisibility(!modalVisible)}>
       <Feather name="arrow-right" size={45} color={"black"} />
     </Pressable>
   );
@@ -40,27 +43,43 @@ export default function useMedLog(medication) {
 
   const RightContent = (props) => <Card.Actions>{goButton}</Card.Actions>;
 
-  //const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
+  // function handleVisibility() {
+  //   setModalVisible(!modalVisible);
+  // }
 
   return (
-    // <View style={{ marginBottom: 10 }}>
-    //     <MedicationCheckIn
-    //       medicationIcon={image}
-    //       medicationName={title}
-    //       medicationDescription="TBD"
-    //       daysDone="1"
-    //       pillFrequency={dose}
-    //       time={"TBD"}
-    //       date={"DATE TBD"}
-    //       isVisible={modalVisible}
-    //     />
-    // <Card
-    //   style={{
-    //     backgroundColor: "white",
-    //     marginBottom: 20,
-    //     marginTop: 10,
-    //   }}
-    // >
+    <View style={{ marginBottom: 10 }}>
+      <Modal
+      animationType="slide"
+      transparent={false}
+      visible={false}
+      // onRequestClose={() => {
+      //   Alert.alert("Modal has been closed.");
+      //   setModalVisible(!modalVisible);
+      // }}
+    >
+      <LinearGradient
+        // Background Linear Gradient
+        style={Styles.container}
+        colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
+        start={{ x: 0.6, y: 0.4 }}
+      >
+      <MedicationCheckIn
+          medicationIcon={image}
+          medicationName={title}
+          medicationDescription={medicationDescription}
+          daysDone={daysDone}
+          pillNumber={pillNumber}
+          pillDose={dose}
+          time={"TBD"}
+          date={"DATE TBD"}
+          // visibilityFunction={handleVisibility}
+          isVisible={false}
+        />
+        </LinearGradient>
+    </Modal>
+        
     <Card
       style={{
         backgroundColor: "white",
@@ -75,6 +94,7 @@ export default function useMedLog(medication) {
         right={RightContent}
       />
     </Card>
+    </View>
   );
 }
 

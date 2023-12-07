@@ -43,6 +43,7 @@ const MedicationCheckIn = (props) => {
   const daysAway = props.daysAway;
   const pillNumber = props.pillNumber;
   const pillFrequency = props.pillFrequency;
+  const pillDose = props.pillDose;
   const time = props.time;
   const date = props.date;
   let taken = false;
@@ -198,7 +199,7 @@ const MedicationCheckIn = (props) => {
           <Card style={styles.programDetails}>
             <Card.Title
               title={
-                pillNumber + " pill " + pillFrequency + " per day at " + time
+                pillDose + " at " + time
               }
             />
           </Card>
