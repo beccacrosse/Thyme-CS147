@@ -15,11 +15,33 @@ export const getData = async (key) => {
   }
 };
 
+export const getAllData = async (key) => {
+  try {
+    const value = await AsyncStorage.getAllKeys();
+    if (value !== null) {
+      // We have data!!
+      console.log(value);
+    }
+  } catch (error) {
+    // Error retrieving data
+    console.log("error loading data");
+  }
+};
+
 export const setData = async (key, value) => {
   try {
     await AsyncStorage.setItem(key, value);
-    console.log(key);
-    getData(key);
+    // console.log(key);
+    // getData(key);
+  } catch (error) {
+    // Error saving data
+    console.log("error saving data");
+  }
+};
+
+export const clearData = async (key, value) => {
+  try {
+    await AsyncStorage.clear();
   } catch (error) {
     // Error saving data
     console.log("error saving data");
