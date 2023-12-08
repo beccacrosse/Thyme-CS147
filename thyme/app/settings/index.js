@@ -15,8 +15,8 @@ export default function Settings() {
       colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
       start={{ x: 0.6, y: 0.4 }}
     >
-      <View style={{ alignItems: "center", flexDirection: "column" }}>
-        <View style={{ top: -100 }}>
+      <View style={{ alignItems: "center", flexDirection: "column", top: -120 }}>
+        <View style={{ }}>
           <Text
             variant="displayLarge"
             style={{
@@ -28,13 +28,15 @@ export default function Settings() {
           >
             Settings
           </Text>
-        </View>
+        </View><View style={{ top:80}}>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             paddingRight: 100,
+            paddingLeft: 30,
+            paddingBottom: 30
           }}
         >
           <Profile profileImage={Images.anna} profileSize={100} />
@@ -60,11 +62,11 @@ export default function Settings() {
                 left: 30,
               }}
             >
-              Premium
+              Member
             </Text>
           </View>
         </View>
-        <SettingsMenu />
+        <SettingsMenu /></View>
       </View>
       <StatusBar style="auto" />
     </LinearGradient>
