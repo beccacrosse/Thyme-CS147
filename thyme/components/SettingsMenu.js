@@ -12,6 +12,7 @@ import { Styles, Images } from "../assets/themes";
 import { Divider } from "@rneui/themed";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
@@ -51,6 +52,21 @@ const SettingsMenu = (props) => {
             <Entypo name="slideshare" size={24} color="black" />
           </Card.Content>
           <Card.Title title="Connections" />
+        </View>
+        <Divider width={0.4} color={"black"} />
+        <View
+          style={{
+            width: "full",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Card.Content>
+            <AntDesign name="medicinebox" size={24} color="black" />
+          </Card.Content>
+          <Card.Title title="Medications" />
         </View>
         <Divider width={0.4} color={"black"} />
         <View
