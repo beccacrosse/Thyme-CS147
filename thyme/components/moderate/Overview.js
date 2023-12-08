@@ -30,7 +30,7 @@ const Overview = (props) => {
             </Text>
             <Text variant="bodyMedium">
               <Text style={{ fontWeight: "bold" }}> Date of Birth: </Text>
-              09/01/2002
+              September 1, 2002
             </Text>
             <Text variant="bodyMedium">
               <Text style={{ fontWeight: "bold" }}> Insurance Provider: </Text>
