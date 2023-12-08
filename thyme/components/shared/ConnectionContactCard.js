@@ -73,7 +73,7 @@ const ConnectionContactCard = ({
       subtitle.toLowerCase() +
       " " +
       title +
-      " has not yet taken medication for today, do you want to send her a reminder";
+      " has not yet taken medication for today, do you want to send her a reminder?";
     return (
       <View style={{ marginBottom: 10 }}>
         <ReminderModal
