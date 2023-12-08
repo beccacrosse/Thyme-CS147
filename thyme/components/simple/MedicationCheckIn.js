@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.95,
   },
   titleText: {
-    fontSize: 25,
+    fontSize: 28,
   },
   subheaderText: {
     fontSize: 16,
