@@ -83,7 +83,7 @@ const ReportModal = (props) => {
                       isDefault={false}
                     />
                     <MainButton
-                      buttonText="Allow"
+                      buttonText="Share"
                       buttonAction={toggleShareAndSentOverlay}
                       isDefault={true}
                     />
@@ -102,7 +102,7 @@ const ReportModal = (props) => {
                 <View style={styles2.modalView}>
                   <Text style={styles2.modalTitleText}>Report Sent</Text>
                   <Text style={styles2.modalBodyText}>
-                    Your medication report has been sent to Doctor Who.
+                    Your medication report has been sent to Doctor Cyan.
                   </Text>
                   <View style={{ flexDirection: "row" }}>
                     <MainButton
