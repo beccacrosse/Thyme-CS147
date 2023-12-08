@@ -59,7 +59,7 @@ const Overview = (props) => {
             </Card.Content>
             <Card.Title
               title="Antibiotic"
-              subtitle="Schedule: 2 times per day"
+              subtitle="Frequency: Twice a day"
             />
           </View>
 
@@ -75,12 +75,12 @@ const Overview = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.bluePill}
+                source={Images.YellowPill}
               />
             </Card.Content>
             <Card.Title
               title="Birth Control"
-              subtitle="Schedule: Daily - Morning"
+              subtitle="Frequency: Once a day"
             />
           </View>
           <View
@@ -102,8 +102,8 @@ const Overview = (props) => {
               />
             </Card.Content>
             <Card.Title
-              title="Vitamin D3"
-              subtitle="Schedule: Daily - Morning"
+              title="Vitamin D"
+              subtitle="Frequency: Once a day"
             />
           </View>
         </Card>
