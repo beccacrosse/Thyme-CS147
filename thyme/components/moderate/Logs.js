@@ -157,7 +157,7 @@ const Logs = (props) => {
           <Card.Content>
             <Image
               style={[styles.icon, { width: size, height: size }]}
-              source={Images.bluePill}
+              source={Images.birthControl}
             />
           </Card.Content>
           <Card.Title title="Birth Control" subtitle="Taken at 10:00" />
@@ -256,7 +256,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.bluePill}
+                source={Images.birthControl}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00" />
@@ -319,7 +319,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.bluePill}
+                source={Images.birthControl}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00" />
@@ -359,7 +359,7 @@ const Logs = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.bluePill}
+                source={Images.birthControl}
               />
             </Card.Content>
             <Card.Title title="Birth Control" subtitle="Taken at 10:00" />

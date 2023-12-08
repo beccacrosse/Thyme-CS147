@@ -72,7 +72,7 @@ const Overview = (props) => {
             <Card.Content>
               <Image
                 style={[styles.icon, { width: size, height: size }]}
-                source={Images.YellowPill}
+                source={Images.birthControl}
               />
             </Card.Content>
             <Card.Title

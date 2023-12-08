@@ -5,6 +5,7 @@ const images = {
   hunter: require("./Hunter.jpg"),
   profilePlaceholder: require("./profilePlaceholder.jpeg"),
   avitan: require("./YellowPill.png"),
+  birthControl: require("./YellowPill.png"),
   asprin: require("./bluePill.png"),
   bluePill: require("./bluePill.png"),
   adderall: require("./RedPill.png"),
