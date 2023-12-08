@@ -25,9 +25,9 @@ const MedLog = ({ medication }) => {
   const title = medication.name;
   const image = medication.image;
   const dose = medication.dose;
-  const medicationDescription =
-    "Individualized information about each medication coming soon :)";
-  const daysDone = 1;
+  const medicationDescription = medication.description;
+  const daysDone = 5;
+  const daysAway = 5;
   const pillNumber = 1;
   const buttonDisabled = title != "Adderall" ? false : true;
   const defaultColor = title != "Adderall" ? "white" : Styles.grayedOut;
@@ -80,6 +80,7 @@ const MedLog = ({ medication }) => {
             medicationName={title}
             medicationDescription={medicationDescription}
             daysDone={daysDone}
+            daysAway={daysAway}
             pillNumber={pillNumber}
             pillDose={dose}
             time={time}

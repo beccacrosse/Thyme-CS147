@@ -55,12 +55,16 @@ const UserMedications = {
           dose: "Take 1 pill twice per day",
           image: Images.asprin,
           time: "08:00",
+          description:
+            "Antibiotics are medications that fight bacterial infections. Antibiotics can stop the growth of bacteria by preventing them from making certain proteins they need to multiply. (Source: Cleveland Clinic)",
         },
         {
           name: "Birth control",
           dose: "Take 1 pill once per day",
           image: Images.avitan,
           time: "08:00",
+          description:
+            "Birth control pills are a type of contraception that’s 99% effective at preventing pregnancy when taken consistently every day. The pill contains hormones that regulate menstruation, decrease PMS symptoms, lower the risk of ovarian and uterine cancers, improve acne and treat endometriosis. (Source: Cleveland Clinic)",
         },
       ],
     },
@@ -72,12 +76,16 @@ const UserMedications = {
           dose: "Take 1 pill, on Mondays",
           image: Images.adderall,
           time: "10:00",
+          description:
+            "Adderall treats attention-deficit hyperactivity disorder (ADHD). It works by improving focus and reducing impulsive behavior. It may also be used to treat narcolepsy. It works by promoting wakefulness. It belongs to a group of medications called stimulants. (Source: Cleveland Clinic)",
         },
         {
           name: "Vitamin D",
           dose: "Take 1 pill once per day",
           image: Images.d3,
           time: "10:00",
+          description:
+            "Vitamin D capsules and tablets treat low vitamin D levels in your body. It increases the amount of calcium your body can absorb. Vitamin D and calcium help build and maintain the health of your bones, your immune system and your brain. (Source: Cleveland Clinic)",
         },
       ],
     },
@@ -89,6 +97,8 @@ const UserMedications = {
           dose: "Take 1 pill twice per day",
           image: Images.asprin,
           time: "20:00",
+          description:
+            "Antibiotics are medications that fight bacterial infections. Antibiotics can stop the growth of bacteria by preventing them from making certain proteins they need to multiply. (Source: Cleveland Clinic)",
         },
         // {
         //   name: "Melatonin",
