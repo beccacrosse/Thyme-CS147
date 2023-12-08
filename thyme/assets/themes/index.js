@@ -90,12 +90,12 @@ const UserMedications = {
           image: Images.asprin,
           time: "20:00",
         },
-        {
-          name: "Melatonin",
-          dose: "Take 1 pill once per day",
-          image: Images.avitan,
-          time: "20:00",
-        },
+        // {
+        //   name: "Melatonin",
+        //   dose: "Take 1 pill once per day",
+        //   image: Images.avitan,
+        //   time: "20:00",
+        // },
       ],
     },
   ],
