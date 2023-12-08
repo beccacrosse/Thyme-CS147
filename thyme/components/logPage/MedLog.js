@@ -18,29 +18,35 @@ import { getData, setData } from "../../asyncStorage.js";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
-const MedLog = ({medication}) => {
+const MedLog = ({ medication }) => {
   const avatarSize = 50;
-  const date = "Thu, November 2";
+  const date = "Fri, December 8";
   const time = medication.time;
   const title = medication.name;
   const image = medication.image;
   const dose = medication.dose;
-  const medicationDescription = "Individualized information about each medication coming soon :)";
+  const medicationDescription =
+    "Individualized information about each medication coming soon :)";
   const daysDone = 1;
   const pillNumber = 1;
-  const buttonDisabled = (title!="Adderall")? false: true;
-  const defaultColor = (title!="Adderall")? "white": Styles.grayedOut
-  const secondaryColor = (title!="Adderall")? "black": Styles.grayedOutButton
-  const secondaryTextColor = (title!="Adderall")? "black": Styles.grayedOutText
-  
+  const buttonDisabled = title != "Adderall" ? false : true;
+  const defaultColor = title != "Adderall" ? "white" : Styles.grayedOut;
+  const secondaryColor = title != "Adderall" ? "black" : Styles.grayedOutButton;
+  const secondaryTextColor =
+    title != "Adderall" ? "black" : Styles.grayedOutText;
+
   //const RightContent = (props) => <Card.Actions>{goButton}</Card.Actions>;
 
   const goButton = (
-    <Pressable disabled={buttonDisabled} style={styles.goButton} onPress={() => setModalVisible(!modalVisible)}>
+    <Pressable
+      disabled={buttonDisabled}
+      style={styles.goButton}
+      onPress={() => setModalVisible(!modalVisible)}
+    >
       <Feather name="arrow-right" size={45} color={secondaryColor} />
     </Pressable>
   );
-  
+
   const LeftContent = (props) => (
     <Image
       style={[styles.icon, { width: avatarSize, height: avatarSize }]}
@@ -48,79 +54,73 @@ const MedLog = ({medication}) => {
     />
   );
 
-
   const [modalVisible, setModalVisible] = React.useState(false);
   function handleVisibility() {
     setModalVisible(!modalVisible);
   }
 
-  const [backgroundColor, setBackgroundColor] = useState(defaultColor)
+  const [backgroundColor, setBackgroundColor] = useState(defaultColor);
   function handleBackgroundColor() {
-    console.log('handleBackgroundColor has been called!')
+    console.log("handleBackgroundColor has been called!");
     setBackgroundColor(Styles.completedColor);
-    console.log('')
+    console.log("");
   }
 
   return (
     <View style={{ marginBottom: 10 }}>
-      <Modal
-      animationType="slide"
-      transparent={false}
-      visible={modalVisible}
-    >
-      <LinearGradient
-        // Background Linear Gradient
-        style={Styles.container}
-        colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
-        start={{ x: 0.6, y: 0.4 }}
-      >
-      <MedicationCheckIn
-          medicationIcon={image}
-          medicationName={title}
-          medicationDescription={medicationDescription}
-          daysDone={daysDone}
-          pillNumber={pillNumber}
-          pillDose={dose}
-          time={time}
-          date={date}
-          visibilityFunction={handleVisibility}
-          completedColorFunction={handleBackgroundColor}
-          isVisible={modalVisible}
-        />
+      <Modal animationType="slide" transparent={false} visible={modalVisible}>
+        <LinearGradient
+          // Background Linear Gradient
+          style={Styles.container}
+          colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
+          start={{ x: 0.6, y: 0.4 }}
+        >
+          <MedicationCheckIn
+            medicationIcon={image}
+            medicationName={title}
+            medicationDescription={medicationDescription}
+            daysDone={daysDone}
+            pillNumber={pillNumber}
+            pillDose={dose}
+            time={time}
+            date={date}
+            visibilityFunction={handleVisibility}
+            completedColorFunction={handleBackgroundColor}
+            isVisible={modalVisible}
+          />
         </LinearGradient>
-    </Modal>
-        
-    <Card
-      style={{
-        backgroundColor: backgroundColor,
-        marginBottom: 10,
-        marginTop: 10,
-      }}
-    >
-      <View
-            style={{
-              width: windowWidth * .75,
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          > 
-      
-      <Card.Title titleStyle={{color: secondaryTextColor}} subtitleStyle={{color: secondaryTextColor}}
-        title={title}
-        subtitle={dose}
-        left={LeftContent}
-        //right={RightContent}
-      />
-      <Card.Actions>
-              {goButton}
-        </Card.Actions>
+      </Modal>
+
+      <Card
+        style={{
+          backgroundColor: backgroundColor,
+          marginBottom: 10,
+          marginTop: 10,
+        }}
+      >
+        <View
+          style={{
+            width: windowWidth * 0.75,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Card.Title
+            titleStyle={{ color: secondaryTextColor }}
+            subtitleStyle={{ color: secondaryTextColor }}
+            title={title}
+            subtitle={dose}
+            left={LeftContent}
+            //right={RightContent}
+          />
+          <Card.Actions>{goButton}</Card.Actions>
         </View>
-    </Card>
+      </Card>
     </View>
   );
-}
+};
 
 const styles = {
   logContainer: {
