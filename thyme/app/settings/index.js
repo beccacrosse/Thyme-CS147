@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { Styles } from "../../assets/themes";
+import Profile from "../../components/shared/Profile";
+import { Images } from "../../assets/themes";
 
 export default function Settings() {
   return (
@@ -12,7 +14,52 @@ export default function Settings() {
       colors={["#C2D8A4", "rgba(194, 216, 164, 0.00)"]}
       start={{ x: 0.6, y: 0.4 }}
     >
-      <Text>Settings!!</Text>
+
+    <View style={{alignItems: "center", flexDirection:"column"}}>
+    <View style = {{top : -100, }}>
+          <Text
+            variant="displayLarge"
+            style={{
+              fontFamily: "Alegreya Sans",
+              fontSize: 60,
+              color: "#263E20",
+              fontWeight: "bold",
+            }}
+          >
+            Connections
+          </Text>
+        </View>
+        <View style={{display:"flex", flexDirection:"row", alignItems: "center", paddingRight: 100}}>
+          <Profile profileImage={Images.anna} profileSize={100} />
+              <View><Text
+                  variant="displayLarge"
+                  style={{
+                    fontFamily: "Alegreya Sans",
+                    fontSize: 30,
+                    color: "#263E20",
+                    fontWeight: "bold",
+                    left: 30
+                  }}
+                >
+                  Anna Gao
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: "Alegreya Sans",
+                    fontSize: 18,
+                    color: "#263E20",
+                    fontWeight: "bold",
+                    left: 30
+                  }}
+                >
+                Premium
+                </Text>
+          </View>
+        </View>
+        <View style={{paddingTop: 50, }}>
+            <Text>Replace this with a component?</Text>
+          </View>
+      </View>
       <StatusBar style="auto" />
     </LinearGradient>
   );
