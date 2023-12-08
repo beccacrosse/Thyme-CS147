@@ -52,7 +52,7 @@ export default function App() {
         </View>
         <View style={{ alignItems: "center" }}>
           <ProgressBar
-            progress={0.8}
+            progress={0.5}
             color={Styles.buttonOutlineColor}
             style={styles.progressBar}
           />
