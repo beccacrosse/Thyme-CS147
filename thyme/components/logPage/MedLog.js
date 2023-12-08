@@ -20,7 +20,7 @@ const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 const MedLog = ({medication}) => {
   const avatarSize = 50;
-  const date = "Thu, 2 November";
+  const date = "Thu, November 2";
   const time = medication.time;
   const title = medication.name;
   const image = medication.image;
