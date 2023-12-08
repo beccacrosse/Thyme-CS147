@@ -92,7 +92,7 @@ const Logs = (props) => {
 
   if (antibiotic1Taken) {
     antibiotic1View = (
-      <Card style={{ backgroundColor: "white" }}>
+      <Card style={{ backgroundColor: "white", marginBottom: 10 }}>
         <View
           style={{
             width: "full",
@@ -118,7 +118,7 @@ const Logs = (props) => {
 
   if (antibiotic2Taken) {
     antibiotic2View = (
-      <Card style={{ backgroundColor: "white" }}>
+      <Card style={{ backgroundColor: "white", marginBottom: 10 }}>
         <View
           style={{
             width: "full",
@@ -144,9 +144,7 @@ const Logs = (props) => {
 
   if (birthControlTaken) {
     birthControlView = (
-      <Card
-        style={{ backgroundColor: "white", marginTop: 10, marginBottom: 20 }}
-      >
+      <Card style={{ backgroundColor: "white", marginBottom: 10 }}>
         <View
           style={{
             width: "full",
@@ -172,9 +170,7 @@ const Logs = (props) => {
 
   if (vitaminDTaken) {
     vitaminDView = (
-      <Card
-        style={{ backgroundColor: "white", marginTop: 10, marginBottom: 20 }}
-      >
+      <Card style={{ backgroundColor: "white", marginBottom: 10 }}>
         <View
           style={{
             width: "full",
