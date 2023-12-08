@@ -57,10 +57,7 @@ const Overview = (props) => {
                 source={Images.bluePill}
               />
             </Card.Content>
-            <Card.Title
-              title="Antibiotic"
-              subtitle="Frequency: Twice a day"
-            />
+            <Card.Title title="Antibiotic" subtitle="Frequency: Twice a day" />
           </View>
 
           <View
@@ -101,10 +98,27 @@ const Overview = (props) => {
                 source={Images.d3}
               />
             </Card.Content>
-            <Card.Title
-              title="Vitamin D"
-              subtitle="Frequency: Once a day"
-            />
+            <Card.Title title="Vitamin D" subtitle="Frequency: Once a day" />
+          </View>
+          <View
+            style={{
+              width: "full",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Card.Content>
+              <Image
+                style={[
+                  styles.icon,
+                  { width: size, height: size, flexShrink: 0 },
+                ]}
+                source={Images.adderall}
+              />
+            </Card.Content>
+            <Card.Title title="Adderall" subtitle="Frequency: Once a week" />
           </View>
         </Card>
       </View>
