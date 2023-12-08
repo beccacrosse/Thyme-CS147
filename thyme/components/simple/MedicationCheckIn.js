@@ -217,7 +217,7 @@ const MedicationCheckIn = (props) => {
           </View>
         </View>
         <View>
-          <Text style={styles.subheaderText}>Program</Text>
+          <Text style={styles.subheaderText}>Frequency</Text>
           <Card style={styles.programDetails}>
             <Card.Title title={pillDose + " at " + time} />
           </Card>
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.95,
   },
   titleText: {
-    fontSize: 25,
+    fontSize: 28,
   },
   subheaderText: {
     fontSize: 16,
