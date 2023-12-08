@@ -34,6 +34,8 @@ const MedicationCheckIn = (props) => {
   const [buttonText, setButtonText] = useState("Submit Log");
   //onst [taken, setTaken] = useState(false);
 
+  const [med, setMed] = useState([]);
+
   const medicationIcon = props.medicationIcon;
   const medicationName = props.medicationName;
   const medicationDescription = props.medicationDescription
@@ -46,8 +48,8 @@ const MedicationCheckIn = (props) => {
   const pillDose = props.pillDose;
   const time = props.time;
   const date = props.date;
-  const visibilityFunction = props.visibilityFunction
-  const completedColorFunction = props.completedColorFunction
+  const visibilityFunction = props.visibilityFunction;
+  const completedColorFunction = props.completedColorFunction;
   let taken = false;
 
   // Toggles the Log Information Overlay
@@ -58,7 +60,7 @@ const MedicationCheckIn = (props) => {
   const completeCheckin = () => {
     setVisible(!visible);
     completedColorFunction();
-  }
+  };
 
   // Toggles the Information Overlay
   const toggleInfoOverlay = () => {
@@ -73,19 +75,31 @@ const MedicationCheckIn = (props) => {
     setTextEditable(!isTextEditable);
     completedColorFunction();
 
-    const key = medicationName + "-" + "December 8, 2023" + "-" + time;
+    const key = "December 8, 2023";
     taken = true;
-    const storageValue = [
-      medicationName,
-      "December 8, 2023",
-      time,
-      medicationIcon,
-      taken,
-    ];
+    const storageValue = [medicationName, time];
     (async () => {
-      await setData(key, JSON.stringify(storageValue));
+      try {
+        let currArr = await getData("December 8, 2023");
+
+        if (currArr != undefined) {
+          currArr = JSON.parse(currArr);
+
+          const occurence = currArr.find((arr) =>
+            arr.every((item, index) => item === storageValue[index])
+          );
+
+          if (!occurence) {
+            currArr.push(storageValue);
+          }
+          await setData(key, JSON.stringify(currArr));
+        } else {
+          console.log("didn't work");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
     })();
-    //setData(key, JSON.stringify(storageValue));
   };
 
   const onEdit = () => {
@@ -205,11 +219,7 @@ const MedicationCheckIn = (props) => {
         <View>
           <Text style={styles.subheaderText}>Program</Text>
           <Card style={styles.programDetails}>
-            <Card.Title
-              title={
-                pillDose + " at " + time
-              }
-            />
+            <Card.Title title={pillDose + " at " + time} />
           </Card>
         </View>
         <View>
