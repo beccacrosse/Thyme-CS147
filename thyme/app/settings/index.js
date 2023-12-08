@@ -28,14 +28,14 @@ export default function Settings() {
           >
             Settings
           </Text>
-        </View><View style={{ top:80}}>
+        </View><View style={{ top:96}}>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             paddingRight: 100,
-            paddingLeft: 30,
+            paddingLeft: 20,
             paddingBottom: 30
           }}
         >

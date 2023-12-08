@@ -36,18 +36,34 @@ export default function Log() {
             <View>
               <View
                 style={{
-                  flexDirection: "row",
+                  flexDirection: "column",
                   justifyContent: "space-between",
                   marginBottom: 15,
                 }}
               >
                 <View style={{ flexDirection: "column", alignItems: "center" }}>
                   {/* <BackButton style={{ alignSelf: "flex-start", width: 90}} /> */}
-                  <Text style={{ fontSize: 25, marginTop: 60 }}>{date}</Text>
+                  
+                </View><View style={{flexDirection: "column", alignItems: "center", marginTop: 5}}>
+                  <Text
+                    variant="displayLarge"
+                    style={{
+                      fontFamily: "Alegreya Sans",
+                      fontSize: 60,
+                      color: "#263E20",
+                      fontWeight: "bold",
+                      
+                    }}
+                  >
+                    Anna's Log
+                  </Text>
+    
+                
+                <Text style={{ fontSize: 25, marginBottom: 30 }}>{date}</Text>
                 </View>
-                <View style={Styles.profile}>
+                {/* <View style={Styles.profile}>
                   <Profile profileImage={Images.anna} profileSize={90} />
-                </View>
+                </View> */}
               </View>
               <Image></Image>
             </View>
