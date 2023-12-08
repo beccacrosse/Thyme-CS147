@@ -47,13 +47,58 @@ const Styles = StyleSheet.create({
 
 const UserMedications = {
   medications: [
-    { time: "08:00", 
-    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin, time: "08:00" },{ name: "Birth control", dose: "Take 1 pill once per day", image: Images.avitan ,time: "08:00"}, ] },
-    { time: "10:00", 
-    medications: [{ name: "Adderall", dose: "Take 1 pill, on Mondays", image: Images.adderall, time: "10:00"  }, { name: "Vitamins", dose: "Take 2 pills once per day", image: Images.d3, time: "10:00" }] },
-    { time: "20:00", 
-    medications: [{ name: "Antibiotics", dose: "Take 1 pill twice per day", image: Images.asprin, time: "20:00"  }, { name: "Melatonin", dose: "Take 1 pill once per day", image: Images.avitan, time: "20:00"  }] }
-    ]
+    {
+      time: "08:00",
+      medications: [
+        {
+          name: "Antibiotics",
+          dose: "Take 1 pill twice per day",
+          image: Images.asprin,
+          time: "08:00",
+        },
+        {
+          name: "Birth control",
+          dose: "Take 1 pill once per day",
+          image: Images.avitan,
+          time: "08:00",
+        },
+      ],
+    },
+    {
+      time: "10:00",
+      medications: [
+        {
+          name: "Adderall",
+          dose: "Take 1 pill, on Mondays",
+          image: Images.adderall,
+          time: "10:00",
+        },
+        {
+          name: "Vitamin D",
+          dose: "Take 1 pill once per day",
+          image: Images.d3,
+          time: "10:00",
+        },
+      ],
+    },
+    {
+      time: "20:00",
+      medications: [
+        {
+          name: "Antibiotics",
+          dose: "Take 1 pill twice per day",
+          image: Images.asprin,
+          time: "20:00",
+        },
+        {
+          name: "Melatonin",
+          dose: "Take 1 pill once per day",
+          image: Images.avitan,
+          time: "20:00",
+        },
+      ],
+    },
+  ],
 };
 
 export { Icons, Images, Styles, UserMedications };
