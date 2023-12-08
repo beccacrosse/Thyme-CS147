@@ -39,9 +39,9 @@ const Logs = (props) => {
 
         if (occurenceAntibiotics) {
           setAntibiotic1Taken(true);
-          console.log("antibiotic 1 has been taken");
+          //console.log("antibiotic 1 has been taken");
         } else {
-          console.log("antibiotic 1 has not been taken");
+          //console.log("antibiotic 1 has not been taken");
         }
 
         const occurenceAntibiotics2 = currArr.find((arr) =>
@@ -50,9 +50,9 @@ const Logs = (props) => {
 
         if (occurenceAntibiotics2) {
           setAntibiotic2Taken(true);
-          console.log("antibiotic 2 has been taken");
+          //console.log("antibiotic 2 has been taken");
         } else {
-          console.log("antibiotic 2 has not been taken");
+          //console.log("antibiotic 2 has not been taken");
         }
 
         const occurenceBirthControl = currArr.find((arr) =>
@@ -61,9 +61,9 @@ const Logs = (props) => {
 
         if (occurenceBirthControl) {
           setBirthControlTaken(true);
-          console.log("birth control has been taken");
+          //console.log("birth control has been taken");
         } else {
-          console.log("birth control has not been taken");
+          //console.log("birth control has not been taken");
         }
 
         const occurenceVitaminD = currArr.find((arr) =>
@@ -72,9 +72,9 @@ const Logs = (props) => {
 
         if (occurenceVitaminD) {
           setVitaminDTaken(true);
-          console.log("vitamin D has been taken");
+          //console.log("vitamin D has been taken");
         } else {
-          console.log("vitamin D has not been taken");
+          //console.log("vitamin D has not been taken");
         }
       } else {
         console.log("didn't work");
