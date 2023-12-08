@@ -284,7 +284,7 @@ const Logs = (props) => {
           </View>
         </Card>
 
-        <Text style={styles.subheaderText}>October 31, 2023</Text>
+        <Text style={styles.subheaderText}>December 6, 2023</Text>
         <Card style={{ backgroundColor: "white" }}>
           <View
             style={{
@@ -326,7 +326,7 @@ const Logs = (props) => {
           </View>
         </Card>
 
-        <Text style={styles.subheaderText}>October 30, 2023</Text>
+        <Text style={styles.subheaderText}>December 5, 2023</Text>
         <Card style={{ backgroundColor: "white" }}>
           <View
             style={{
