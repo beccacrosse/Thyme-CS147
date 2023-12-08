@@ -58,7 +58,7 @@ const DefaultConnectionContactCard = ({
                 size={34}
                 iconColor="#263E20"
                 mode="outlined"
-                icon={icons.alarm}
+                icon={icons.report}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
             </Card.Actions>
@@ -101,7 +101,7 @@ const DefaultConnectionContactCard = ({
                 size={34}
                 iconColor="#263E20"
                 mode="outlined"
-                icon={icons.greenTick}
+                icon={icons.alarm}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
               {/* <IconButton
