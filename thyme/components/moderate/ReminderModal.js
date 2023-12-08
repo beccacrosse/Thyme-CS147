@@ -12,8 +12,12 @@ import { Button } from "../shared/MainButton";
 import MainButton from "../shared/MainButton";
 
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
-const ReminderModal = ({ visible, content, visibilityFunction,name }) => {
+const ReminderModal = ({ visible, content, visibilityFunction,name,handleReminderSent }) => {
   const [secondModalVisible, setSecondModalVisible] = useState(false);
+  function handleSecond() {
+    setSecondModalVisible(true);
+    handleReminderSent();
+  }
 
   return (
     <View>
@@ -36,7 +40,7 @@ const ReminderModal = ({ visible, content, visibilityFunction,name }) => {
           <View style={{ flexDirection: "row" }}>
             <MainButton
               buttonText="Okay"
-              buttonAction={() => setSecondModalVisible(true)}
+              buttonAction={handleSecond}
               //   isDefault={true}
             />
           </View>

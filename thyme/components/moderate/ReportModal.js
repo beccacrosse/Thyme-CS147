@@ -23,6 +23,9 @@ import { Button, Overlay } from "react-native-elements";
 const { height: windowHeight, width: windowWidth } = Dimensions.get("window");
 
 const ReportModal = (props) => {
+  //          isVisible={modalVisible}
+  //visibilityFunction={handleVisibility}
+  //handleReportSent = {handleReportSent}
   const [visibleShare, setVisible] = useState(false); // Visibility of Report Share Overlay
   const [visibleSent, setSentOverlayVisible] = useState(false); // Visibility Report Sent Overlay
 
@@ -33,6 +36,7 @@ const ReportModal = (props) => {
 
   // Toggle Visibility of Report Share and Report Sent Overlay
   const toggleShareAndSentOverlay = () => {
+    props.handleReportSent();
     setVisible(!visibleShare);
     //await delay(5000);
     setSentOverlayVisible(!visibleSent);

@@ -11,8 +11,7 @@ import Profile from "../shared/Profile";
 import ReportModal from "../moderate/ReportModal";
 import ReminderModal from "../moderate/ReminderModal";
 import icons from "../../assets/icons/icons";
-import Styles from "../../assets/themes"
-
+import Styles from "../../assets/themes";
 
 // Connection Card
 const ConnectionContactCard = ({
@@ -23,19 +22,30 @@ const ConnectionContactCard = ({
   icon,
 }) => {
   //const LeftContent = props => <Profile {...props} profileImage={profileImage} profileSize={profileSize} />;
-  
+
   const [modalVisible, setModalVisible] = useState(false);
+  const [reportSent, setReportSent] = useState(false);
+  const [reminderSent, setReminderSent] = useState(false);
+
+  function handleReportSent() {
+    setReportSent(true);
+  }
+
+  function handleReminderSent() {
+    setReminderSent(true);
+  }
 
   function handleVisibility() {
     setModalVisible(!modalVisible);
   }
 
-  if (subtitle == "Professional") {
+  if (subtitle == "Professional" && reportSent == false) {
     return (
       <View style={{ marginBottom: 10 }}>
         <ReportModal
           isVisible={modalVisible}
           visibilityFunction={handleVisibility}
+          handleReportSent={handleReportSent}
         />
 
         <Card>
@@ -59,7 +69,7 @@ const ConnectionContactCard = ({
                 size={34}
                 iconColor="#263E20"
                 mode="outlined"
-                icon={icon}
+                icon={icons.report}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
             </Card.Actions>
@@ -67,7 +77,45 @@ const ConnectionContactCard = ({
         </Card>
       </View>
     );
-  } else {
+  } else if (subtitle == "Professional" && reportSent == true) {
+    return (
+      <View style={{ marginBottom: 10 }}>
+        <ReportModal
+          isVisible={modalVisible}
+          visibilityFunction={handleVisibility}
+          handleReportSent={handleReportSent}
+        />
+
+        <Card>
+          <View
+            style={{
+              width: 160,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Card.Content>
+              <Profile profileImage={profileImage} profileSize={profileSize} />
+            </Card.Content>
+            <Card.Title title={title} subtitle={subtitle} />
+
+            <Card.Actions>
+              <IconButton
+                theme={{ colors: { primary: "#263E20" } }}
+                size={34}
+                iconColor="#263E20"
+                mode="outlined"
+                icon={icons.greenTick}
+                onPress={() => handleVisibility(!modalVisible)}
+              ></IconButton>
+            </Card.Actions>
+          </View>
+        </Card>
+      </View>
+    );
+  } else if (subtitle != "Professional" && reminderSent == false) {
     const content =
       "Your " +
       subtitle.toLowerCase() +
@@ -80,7 +128,8 @@ const ConnectionContactCard = ({
           visible={modalVisible}
           content={content}
           visibilityFunction={handleVisibility}
-          name = {title}
+          name={title}
+          handleReminderSent={handleReminderSent}
         />
         <Card>
           <View
@@ -99,11 +148,11 @@ const ConnectionContactCard = ({
 
             <Card.Actions>
               <IconButton
-                theme={{ colors: { primary: "#263E20" }}}
+                theme={{ colors: { primary: "#263E20" } }}
                 size={34}
                 iconColor="#263E20"
                 mode="outlined"
-                icon={icons.greenTick}
+                icon={icons.alarm}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton>
               {/* <IconButton
@@ -114,6 +163,59 @@ const ConnectionContactCard = ({
                 icon={icon}
                 onPress={() => handleVisibility(!modalVisible)}
               ></IconButton> */}
+            </Card.Actions>
+          </View>
+        </Card>
+      </View>
+    );
+  } else if (subtitle != "Professional" && reminderSent == true){
+    const content =
+      "Your " +
+      subtitle.toLowerCase() +
+      " " +
+      title +
+      " has not yet taken medication for today, do you want to send her a reminder?";
+    return (
+      <View style={{ marginBottom: 10 }}>
+        <ReminderModal
+          visible={modalVisible}
+          content={content}
+          visibilityFunction={handleVisibility}
+          name={title}
+          
+        />
+        <Card>
+          <View
+            style={{
+              width: 160,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Card.Content>
+              <Profile profileImage={profileImage} profileSize={profileSize} />
+            </Card.Content>
+            <Card.Title title={title} subtitle={subtitle} />
+
+            <Card.Actions>
+              <IconButton
+                theme={{ colors: { primary: "#263E20" } }}
+                size={34}
+                iconColor="#263E20"
+                mode="outlined"
+                icon={icons.greenTick}
+                onPress={() => handleVisibility(!modalVisible)}
+              ></IconButton>
+              {/* <IconButton
+              theme={{ colors: { primary: "#263E20" } }}
+              size={34}
+              iconColor="#263E20"
+              mode="outlined"
+              icon={icon}
+              onPress={() => handleVisibility(!modalVisible)}
+            ></IconButton> */}
             </Card.Actions>
           </View>
         </Card>
