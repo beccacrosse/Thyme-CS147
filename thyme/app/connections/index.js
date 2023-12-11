@@ -93,7 +93,7 @@ export default function Connections() {
         
        
 
-        <View style={isTablet? {top: -30, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}
+        <View style={isTablet? {top: 0, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}
         :{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}}>
           
           <Profile profileImage={Images.anna} profileSize={100} />
@@ -115,7 +115,7 @@ export default function Connections() {
         <Divider bold = "true" />
         </View> */}
 
-        <View style = {isTablet? {top: 0}:{top : -40}}>
+        <View style = {isTablet? {top: 45}:{top : -40}}>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60} icon = {Icons.report}/>
         <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
