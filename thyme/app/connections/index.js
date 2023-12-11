@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, ScrollView} from "react-native";
+import { Dimensions, Text, View, Image, ScrollView} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 import { Styles } from "../../assets/themes";
@@ -18,7 +18,9 @@ import {
 import ConnectionContactCard  from "../../components/shared/ConnectionContactCard"
 import DefaultConnectionContactCard from "../../components/shared/DefaultConnectionContactCard";
 
+const windowWidth = Dimensions.get("window").width;
 export default function Connections() {
+  const isTablet = windowWidth > 500
   let [fontsLoaded] = useFonts({
     AlegreyaSans_400Regular,
   });
@@ -77,7 +79,7 @@ export default function Connections() {
           </Text>
         </View>
 
-        <View style={{ width: "full" , top: -90, }}>
+        <View style={isTablet? {widht: "full", top: -70} :{ width: "full" , top: -90, }}>
           <Searchbar
             placeholder="Search"
             onChangeText={onChangeSearch}
@@ -91,7 +93,8 @@ export default function Connections() {
         
        
 
-        <View style={{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}}>
+        <View style={isTablet? {top: -30, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}
+        :{top: -60, display : 'flex', flexDirection : "row", alignItems: "center", justifyContent: "left"}}>
           
           <Profile profileImage={Images.anna} profileSize={100} />
           <Text
@@ -112,7 +115,7 @@ export default function Connections() {
         <Divider bold = "true" />
         </View> */}
 
-        <View style = {{top : -40}}>
+        <View style = {isTablet? {top: 0}:{top : -40}}>
         <ConnectionContactCard profileImage={Images.cyan} title = "Doctor Cyan" subtitle= "Professional" profileSize={60} icon = {Icons.report}/>
         <ConnectionContactCard profileImage={Images.dia} title = "Dia" subtitle= "Friend" profileSize={60} icon = {Icons.alarm}/>
         <ConnectionContactCard profileImage={Images.hunter} title = "Hunter" subtitle= "Relative" profileSize={60} icon = {Icons.alarm}/>
